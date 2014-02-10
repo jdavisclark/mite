@@ -1,3 +1,7 @@
 {
-  "connectionString":"mysql://user:password@localhost/db"
+  "database": "mitedevel",
+  "user": "mite",
+  "password": "mite",
+  "dialect": "mysql",
+  "port": 3306
 }

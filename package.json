@@ -1,20 +1,22 @@
 {
-    "name": "mite",
-    "version": "1.0.0",
-    "author": "Whitebard-IT",
-    "email": "admin@whiteboard-it.com",
-    "index":"./mite.js",
-    "main": "./mite.js",
-    "directories": { "lib": "./lib" },  
-    "dependencies": {
-      "jsgi": "=v0.2.2",
-        "mysql": "=2.0.0-alpha7",
-        "api-easy": "=0.3.7",
-        "underscore" : ">0.0.0",
-        "uuid" : ">0.0.0",
-        "sha1" : ">0.0.0",
-        "commander": ">0.0.0",
-        "moment" : ">0.0.0",
-        "bogart" : ">0.0.0"
-    }
+  "name": "mite",
+  "version": "0.0.1",
+  "author": "Whitebard-IT",
+  "email": "admin@whiteboard-it.com",
+  "index": "./lib/mite",
+  "main": "./lib/mite",
+  "directories": {
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "underscore": ">0.0.0",
+    "uuid": ">0.0.0",
+    "sha1": ">0.0.0",
+    "commander": "~2.1.0",
+    "moment": "~2.5.1",
+    "mysql": "~2.0.1"
+  },
+  "bin": {
+    "mite": "./lib/cli.js"
+  }
 }
