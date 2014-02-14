@@ -105,7 +105,7 @@ describe("status from a dirty state", function() {
 	});
 
 	it("should have no unexecuted migrations", function() {
-		expect(status.unexecutedMigrations.length).toBe(undefined);
+		expect(status.unexecutedMigration).toBe(undefined);
 	})
 });
 
