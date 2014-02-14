@@ -15,7 +15,6 @@ function failer(done) {
 	}
 }
 
-debugger;
 describe("status from clean state", function () {
 	var mite;
 
@@ -33,7 +32,7 @@ describe("status from clean state", function () {
 		mite.status(migrations).then(function (status) {
 			expect(status.clean).toBe(true);
 			done();
-		}, failer(done))
+		}, failer(done).bind(this));
 	});
 });
 

@@ -10,7 +10,6 @@ function failer(done) {
 	}
 }
 
-debugger;
 describe("clean init", function () {
 	var mite;
 
@@ -45,7 +44,7 @@ describe("init on existing environment", function () {
 		mite = new Mite(config, mockRepo);
 	});
 
-	it("should create the migrations table", function (done) {
+	it("should not create the migrations table", function (done) {
 		var self = this;
 
 		mite.init().then(

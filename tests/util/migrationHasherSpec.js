@@ -3,7 +3,7 @@ var MigrationHasher = require("../../lib/migrationHasher"),
 
 describe("hasher", function() {
 	it("should get 1 migration", function() {
-		var hasher = new MigrationHasher(path.join(__dirname, "../fixtures/statusSpecMigrations"));
+		var hasher = new MigrationHasher(path.join(__dirname, "../fixtures/migrationHasherTestMigrations"));
 		var migrations = hasher.getMigrations();
 
 		expect(migrations).not.toBe(null);
