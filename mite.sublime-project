@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+	"build_systems":
+    [
+    	{
+            "name": "test",
+            "shell_cmd": "$project_path/./node_modules/.bin/jasmine-node --noColor --forceexit --growl $project_path/tests/"
+        }
+    ]
+}
