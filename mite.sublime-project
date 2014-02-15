@@ -10,7 +10,7 @@
     [
     	{
             "name": "test",
-            "shell_cmd": "$project_path/./node_modules/.bin/jasmine-node --noColor --forceexit --growl $project_path/tests/"
+            "shell_cmd": "$project_path/./node_modules/.bin/jasmine-node --noColor --forceexit --captureExceptions $project_path/tests/"
         }
     ]
 }

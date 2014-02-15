@@ -22,12 +22,12 @@ describe("clean init", function () {
 		mite = new Mite(config, mockRepo);
 	});
 
-	it("should create the migrations table", function (done) {
+	it("should initialize", function (done) {
 		var self = this;
 
 		mite.init()
 			.then(function (createdTable) {
-				expect(createdTable).toBe(true);
+				expect(createdTable.initialized).toBe(true);
 				done();
 			}, failer(done))
 	});
@@ -44,12 +44,13 @@ describe("init on existing environment", function () {
 		mite = new Mite(config, mockRepo);
 	});
 
-	it("should not create the migrations table", function (done) {
+	it("should not initialize", function (done) {
 		var self = this;
 
 		mite.init().then(
 			function (created) {
-				expect(created).toEqual(false);
+				expect(created.initialized).toEqual(false);
+				expect(created.alreadyInitialized).toEqual(true);
 				done();
 			},
 			failer(done)

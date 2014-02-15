@@ -12,7 +12,7 @@ MockMigrationRepository.prototype.isInitialized = function() {
 		self = this;
 
 	process.nextTick(function() {
-		def.resolve(self.tableExists);
+		def.resolve(!!self.tableExists);
 	});
 
 	return def.promise;
