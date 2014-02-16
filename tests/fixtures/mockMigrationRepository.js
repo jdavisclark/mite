@@ -43,3 +43,19 @@ MockMigrationRepository.prototype.createMigrationTable = function() {
 	return def.promise;
 };
 
+MockMigrationRepository.prototype.executeMigration = function(migration) {
+	var def = q.defer(),
+		self = this;
+
+	this.migrations.push({
+		key: migration.key,
+		hash: migration.hash
+	});
+
+	process.nextTick(function() {
+		def.resolve();
+	});
+
+	return def.promise;
+};
+

@@ -100,3 +100,46 @@ describe("up from dirty state", function (done) {
 		expect(upStatus.dirtyMigrations[0]).toEqual("1.sql");
 	});
 });
+
+describe("up from unexecuted state", function() {
+	var status,
+		mockRepo,
+		mite,
+		diskMigrations = [
+			{key:"1.sql", hash:"rLr8Wqr1bCwr1TDXBl611mCc7G8wlcSGlCCPhJzQ", sql: "create table firstMigration;"},
+			{key: "2.sql", hash:"YwPhNPnsPQ8JPpYrBcbrBmH93CN9JxHwEspM2bG7", sql: "create table secondMigration;"}
+		];
+
+	beforeEach(function(done) {
+		status = undefined;
+		mockRepo = new MockRepo({
+			tableExists: true,
+			migrations: []
+		});
+		mite = new Mite(config, mockRepo);
+
+		mite.up(diskMigrations).then(function(upStatus) {
+		 	status = upStatus;
+		 	done();
+		});
+	});
+
+	it("should update successfully", function() {
+		expect(status.updated).toBe(true);
+	});
+
+	it("should have a total of 2 executed/tracked", function(done) {
+		mockRepo.all().then(function(tracked) {
+			expect(tracked.length).toBe(2);
+			done();
+		}, failer(done));
+	});
+
+	it("should have executed the migrations sequentially", function(done) {
+		mockRepo.all().then(function(tracked) {
+			expect(tracked[0].key).toBe("1.sql");
+			expect(tracked[1].key).toBe("2.sql");
+			done();
+		}, failer(done));	
+	});
+});
