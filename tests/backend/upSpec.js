@@ -41,12 +41,14 @@ describe("up from uninitialized state", function () {
 
 describe("up from clean state", function () {
 	var mite,
+		migrations;
+
+	beforeEach(function () {
 		migrations = [{
 			key: "1.sql",
 			hash: "lrzmBZxrYf8cKZiBa3UrLj4NyCbZLxxX4uhWWbUc"
 		}];
-
-	beforeEach(function () {
+		
 		mite = new Mite(config, new MockRepo({
 			tableExists: true,
 			migrations: migrations
@@ -101,7 +103,7 @@ describe("up from dirty state", function (done) {
 	});
 });
 
-describe("up from unexecuted state", function() {
+describe("up from unexecuted + empty state", function() {
 	var status,
 		mockRepo,
 		mite,
@@ -141,5 +143,55 @@ describe("up from unexecuted state", function() {
 			expect(tracked[1].key).toBe("2.sql");
 			done();
 		}, failer(done));	
+	});
+});
+
+describe("up from unexecuted state with existing executed migrations", function() {
+	var status,
+		mockRepo,
+		mite,
+		diskMigrations,
+		dbMigrations;
+
+	beforeEach(function(done) {
+		diskMigrations = [
+			{key:"1.sql", hash: "c51VLU6JCmXht8rEQLflLFO39H4PaTUaW746yTdG", up: "stuff"},
+			{key:"2.sql", hash: "OzwDuFRpx3uhAakteLTXw4rUNV9Cr9PNIngLL69x", up: "more stuff"}
+		];
+
+		dbMigrations = [
+			diskMigrations[0]
+		];
+
+		status = undefined;
+
+		mockRepo = new MockRepo({
+			tableExists: true,
+			migrations: dbMigrations
+		});
+
+		mite = new Mite(config, mockRepo);
+
+		spyOn(mockRepo, 'executeMigration').andCallThrough();
+
+		mite.up(diskMigrations).then(function(upStatus) {
+			status = upStatus;
+			done();
+		});
+	});
+
+	it("should succeed", function() {
+		expect(status.updated).toBe(true);
+	});
+
+	it("should have two tracked migrations", function(done) {
+		mockRepo.all().then(function(allMigrations) {
+			expect(allMigrations.length).toBe(2);
+			done();
+		});
+	});
+
+	it("should have executed a single migration", function() {
+		expect(mockRepo.executeMigration.callCount).toBe(1);
 	});
 });
