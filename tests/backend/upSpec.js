@@ -1,18 +1,12 @@
 var Mite = require("../../lib/mite"),
 	config = require("../fixtures/mite.config.json"),
-	MockRepo = require("../fixtures/mockMigrationRepository"),
-	fs = require("fs.extra"),
-	rmrf = require("rimraf"),
-	path = require("path");
-
-var migration_home = path.join(__dirname, "../../", config.migration_home);
-
+	MockRepo = require("../fixtures/mockMigrationRepository");
 
 function failer(done) {
 	return function (err) {
 		this.fail(err);
 		done();
-	}
+	};
 }
 
 describe("up from uninitialized state", function () {
@@ -28,7 +22,7 @@ describe("up from uninitialized state", function () {
 	it("should fail", function (done) {
 		var self = this;
 
-		mite.up([]).then(function (upStatus) {
+		mite.up([]).then(function () {
 			self.fail("this should never resolve");
 		}, function (failStatus) {
 			expect(failStatus.fatal).toBe(true);
@@ -52,7 +46,7 @@ describe("up from clean state", function () {
 		mite = new Mite(config, new MockRepo({
 			tableExists: true,
 			migrations: migrations
-		}))
+		}));
 	});
 
 	it("should do nothing", function (done) {
@@ -64,7 +58,7 @@ describe("up from clean state", function () {
 	});
 });
 
-describe("up from dirty state", function (done) {
+describe("up from dirty state", function () {
 	var upStatus,
 		fail = false;
 
@@ -87,7 +81,7 @@ describe("up from dirty state", function (done) {
 			done();
 		}, function () {
 			fail = true;
-		})
+		});
 	});
 
 	it("should not update", function () {
@@ -121,8 +115,8 @@ describe("up from unexecuted + empty state", function() {
 		mite = new Mite(config, mockRepo);
 
 		mite.up(diskMigrations).then(function(upStatus) {
-		 	status = upStatus;
-		 	done();
+			status = upStatus;
+			done();
 		});
 	});
 
@@ -142,7 +136,7 @@ describe("up from unexecuted + empty state", function() {
 			expect(tracked[0].key).toBe("1.sql");
 			expect(tracked[1].key).toBe("2.sql");
 			done();
-		}, failer(done));	
+		}, failer(done));
 	});
 });
 
@@ -172,7 +166,7 @@ describe("up from unexecuted state with existing executed migrations", function(
 
 		mite = new Mite(config, mockRepo);
 
-		spyOn(mockRepo, 'executeMigration').andCallThrough();
+		spyOn(mockRepo, "executeMigration").andCallThrough();
 
 		mite.up(diskMigrations).then(function(upStatus) {
 			status = upStatus;

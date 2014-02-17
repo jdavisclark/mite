@@ -1,18 +1,12 @@
 var Mite = require("../../lib/mite"),
 	config = require("../fixtures/mite.config.json"),
-	MockRepo = require("../fixtures/mockMigrationRepository"),
-	fs = require("fs.extra"),
-	rmrf = require("rimraf"),
-	path = require("path");
-
-var migration_home = path.join(__dirname, "../../", config.migration_home);
-
+	MockRepo = require("../fixtures/mockMigrationRepository");
 
 function failer(done) {
 	return function (err) {
 		this.fail(err);
 		done();
-	}
+	};
 }
 
 describe("status from uninitialized state", function() {
@@ -28,7 +22,7 @@ describe("status from uninitialized state", function() {
 	it("should fail", function(done) {
 		var self = this;
 
-		mite.status([]).then(function(status) {
+		mite.status([]).then(function() {
 			self.fail("this should never resolve");
 		}, function(failStatus) {
 			expect(failStatus.fatal).toBe(true);
@@ -49,8 +43,7 @@ describe("status from clean + empty state", function () {
 	});
 
 	it("should be clean", function (done) {
-		var self = this,
-			migrations = [];
+		var migrations = [];
 
 		mite.status(migrations).then(function (status) {
 			expect(status.clean).toBe(true);
@@ -112,7 +105,7 @@ describe("status from unexecuted state", function () {
 
 	it("the unexecuted migration should have the correct key", function () {
 		expect(status.unexecutedMigrations[0]).toBe("1.sql");
-	})
+	});
 });
 
 describe("status from a dirty state", function() {
@@ -152,7 +145,7 @@ describe("status from a dirty state", function() {
 
 	it("should have no unexecuted migrations", function() {
 		expect(status.unexecutedMigration).toBe(undefined);
-	})
+	});
 });
 
 

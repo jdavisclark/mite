@@ -1,0 +1,18 @@
+ {
+ 	"globalstrict": false,
+ 	"globals": {
+ 		"process": true,
+	 	"require": true,
+	  	"module": true,
+	  	"exports": true,
+	  	"__dirname": true,
+	  	"describe": true,
+		"define": true,
+	 	"it": true,
+	  	"define": true,
+	  	"spyOn": true,
+	  	"expect": true,
+	  	"beforeEach": true,
+	  	"afterEach": true
+ 	}
+ }

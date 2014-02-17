@@ -38,14 +38,13 @@ MockMigrationRepository.prototype.createMigrationTable = function() {
 			self.tableExists = true;
 			def.resolve(true);
 		} else def.resolve(false);
-	})
+	});
 
 	return def.promise;
 };
 
 MockMigrationRepository.prototype.executeMigration = function(migration) {
-	var def = q.defer(),
-		self = this;
+	var def = q.defer();
 
 	this.migrations.push({
 		key: migration.key,

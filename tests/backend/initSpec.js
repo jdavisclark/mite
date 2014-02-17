@@ -7,7 +7,7 @@ function failer(done) {
 	return function (err) {
 		this.fail(err);
 		done();
-	}
+	};
 }
 
 describe("clean init", function () {
@@ -23,13 +23,11 @@ describe("clean init", function () {
 	});
 
 	it("should initialize", function (done) {
-		var self = this;
-
 		mite.init()
 			.then(function (createdTable) {
 				expect(createdTable.initialized).toBe(true);
 				done();
-			}, failer(done))
+			}, failer(done));
 	});
 });
 
@@ -45,8 +43,6 @@ describe("init on existing environment", function () {
 	});
 
 	it("should not initialize", function (done) {
-		var self = this;
-
 		mite.init().then(
 			function (created) {
 				expect(created.initialized).toEqual(false);
