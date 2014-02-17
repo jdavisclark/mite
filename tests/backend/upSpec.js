@@ -48,7 +48,7 @@ describe("up from clean state", function () {
 			key: "1.sql",
 			hash: "lrzmBZxrYf8cKZiBa3UrLj4NyCbZLxxX4uhWWbUc"
 		}];
-		
+
 		mite = new Mite(config, new MockRepo({
 			tableExists: true,
 			migrations: migrations
@@ -193,5 +193,10 @@ describe("up from unexecuted state with existing executed migrations", function(
 
 	it("should have executed a single migration", function() {
 		expect(mockRepo.executeMigration.callCount).toBe(1);
+	});
+
+	it("should have executed the correct migration", function() {
+		var migrationArg = mockRepo.executeMigration.argsForCall[0][0];
+		expect(migrationArg.key).toBe(diskMigrations[1].key);
 	});
 });
