@@ -15,7 +15,6 @@
     "commander": "~2.1.0",
     "moment": "~2.5.1",
     "mysql": "~2.0.1",
-    "sequelize": "~1.7.0-rc5",
     "q": "~1.0.0",
     "colors": "~0.6.2",
     "rimraf": "~2.2.6",

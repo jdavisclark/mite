@@ -1,5 +1,6 @@
 {
   "database": "mitedevel",
+  "host": "localhost",
   "user": "mite",
   "password": "mite",
   "dialect": "mysql",

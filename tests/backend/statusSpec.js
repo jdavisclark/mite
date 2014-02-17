@@ -38,7 +38,7 @@ describe("status from uninitialized state", function() {
 	});
 });
 
-describe("status from clean state", function () {
+describe("status from clean + empty state", function () {
 	var mite;
 
 	beforeEach(function () {
@@ -56,6 +56,30 @@ describe("status from clean state", function () {
 			expect(status.clean).toBe(true);
 			done();
 		}, failer(done).bind(this));
+	});
+});
+
+
+describe("status from a clean state with migrations", function() {
+	var status,
+		migrations = [
+			{key: "1.sql", hash: "AvmmE9MLGClDh7h8diKpDzhJLcZeCrLyKL4UnSX4", up: "stuff goes here"}
+		],
+		repo = new MockRepo({
+			tableExists: true,
+			migrations: migrations
+		}),
+		mite = new Mite(config, repo);
+
+	beforeEach(function(done) {
+		mite.status(migrations).then(function(miteStatus) {
+			status = miteStatus;
+			done();
+		});
+	});
+
+	it("should be clean", function() {
+		expect(status.clean).toBe(true);
 	});
 });
 

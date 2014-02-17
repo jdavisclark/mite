@@ -1,4 +1,11 @@
 {
+	"build_systems":
+	[
+		{
+			"name": "test",
+			"shell_cmd": "$project_path/./node_modules/.bin/jasmine-node --noColor --forceexit --captureExceptions $project_path/tests/"
+		}
+	],
 	"folders":
 	[
 		{
@@ -6,11 +13,10 @@
 			"path": "."
 		}
 	],
-	"build_systems":
-    [
-    	{
-            "name": "test",
-            "shell_cmd": "$project_path/./node_modules/.bin/jasmine-node --noColor --forceexit --captureExceptions $project_path/tests/"
-        }
-    ]
+	"settings":
+	{
+		"JsFormat":
+		{
+		}
+	}
 }
