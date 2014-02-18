@@ -4,5 +4,6 @@
   "user": "mite",
   "password": "mite",
   "dialect": "mysql",
-  "port": 3306
+  "port": 3306,
+  "migrationExtension": ".sql"
 }

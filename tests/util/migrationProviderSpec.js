@@ -52,3 +52,24 @@ describe("provider (up & down)", function() {
 	});
 });
 
+describe("migration root with non-migrations", function() {
+	var provider,
+		migrations;
+
+	beforeEach(function() {
+		provider = new MigrationProvider(path.join(__dirname, "../fixtures/migrationProviderTestMigrations/withMiscFiles"));
+		migrations = provider.getMigrations();
+	});
+
+	it("should have the correct number of migrations", function() {
+		expect(migrations.length).toBe(2);
+	});
+
+	it("should only have sql migrations", function() {
+		migrations.forEach(function(m) {
+			var ext = path.extname(m.key);
+			expect(ext).toBe(provider.opts.migrationExtension);
+		});
+	});
+});
+
