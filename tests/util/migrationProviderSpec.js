@@ -1,11 +1,14 @@
-var MigrationProvider = require("../../lib/migrationProvider"),
-	path = require("path");
+require("jasmine-node-promises")();
 
-describe("provider", function () {
+var MigrationProvider = require("../../lib/migrationProvider"),
+	path = require("path"),
+	fs = require("fs");
+
+describe("provider (up only migrations)", function () {
 	var provider;
 
 	beforeEach(function () {
-		provider = new MigrationProvider(path.join(__dirname, "../fixtures/migrationProviderTestMigrations"));
+		provider = new MigrationProvider(path.join(__dirname, "../fixtures/migrationProviderTestMigrations/simple"));
 	});
 
 	it("should get 1 migration", function () {
@@ -31,3 +34,21 @@ describe("provider", function () {
 		expect(migrations[1].key).toBe("3.sql");
 	});
 });
+
+describe("provider (up & down)", function() {
+	var provider,
+		migrations;
+
+	beforeEach(function() {
+		provider = new MigrationProvider(path.join(__dirname, "../fixtures/migrationProviderTestMigrations/complete"));
+		migrations = provider.getMigrations();
+	});
+
+	it("should have an up & down for each migration", function() {
+		migrations.forEach(function(m) {
+			expect(typeof m.up).toBe("string");
+			expect(typeof m.down).toBe("string");
+		});
+	});
+});
+
