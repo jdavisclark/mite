@@ -1,13 +1,9 @@
+require("jasmine-node-promises")();
+
 var Mite = require("../../lib/mite"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
 
-function failer(done) {
-	return function (err) {
-		this.fail(err);
-		done();
-	};
-}
 
 describe("stepup from uninitialized state", function () {
 	var mite;
@@ -18,15 +14,14 @@ describe("stepup from uninitialized state", function () {
 		}));
 	});
 
-	it("should fail due to initialization", function (done) {
+	it("should fail due to initialization", function () {
 		var self = this;
 
-		mite.stepUp([]).then(function() {
+		return mite.stepUp([]).then(function() {
 			self.fail("should never resolve");
 		}, function(status) {
 			expect(status.initializationRequired).toBe(true);
 			expect(status.fatal).toBe(true);
-			done();
 		});
 	});
 });
@@ -52,12 +47,11 @@ describe("stepup from dirty + unexecuted state", function() {
 		}));
 	});
 
-	it("should fail due to dirty migrations", function(done) {
-		mite.stepUp(diskMigrations).then(function(status) {
+	it("should fail due to dirty migrations", function() {
+		return mite.stepUp(diskMigrations).then(function(status) {
 			expect(status.updated).toBe(false);
 			expect(status.dirtyMigrations).not.toBe(undefined);
-			done();
-		}, failer(done));
+		});
 	});
 });
 
@@ -80,28 +74,25 @@ describe("stepup from unexecuted state", function() {
 		mite = new Mite(config, mockRepo);
 	});
 
-	it("should succeed", function(done) {
-		mite.stepUp(diskMigrations).then(function(status) {
+	it("should succeed", function() {
+		return mite.stepUp(diskMigrations).then(function(status) {
 			expect(status.updated).toBe(true);
-			done();
-		}, failer(done));
+		});
 	});
 
-	it("should have the correct number of tracked migrations", function(done) {
-		mite.stepUp(diskMigrations).then(function() {
-			mockRepo.all().then(function(allMigrations) {
+	it("should have the correct number of tracked migrations", function() {
+		return mite.stepUp(diskMigrations).then(function() {
+			return mockRepo.all().then(function(allMigrations) {
 				expect(allMigrations.length).toBe(1);
-				done();
-			}, failer(done));
-		}, failer(done));
+			});
+		});
 	});
 
-	it("should call executeMigration the correct number of times", function(done) {
+	it("should call executeMigration the correct number of times", function() {
 		spyOn(mockRepo, "executeMigration").andCallThrough();
 
-		mite.stepUp(diskMigrations).then(function() {
+		return mite.stepUp(diskMigrations).then(function() {
 			expect(mockRepo.executeMigration.callCount).toBe(1);
-			done();
-		}, failer(done));
+		});
 	});
 });

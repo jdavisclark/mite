@@ -1,13 +1,8 @@
+require("jasmine-node-promises")();
+
 var Mite = require("../../lib/mite"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
-
-function failer(done) {
-	return function (err) {
-		this.fail(err);
-		done();
-	};
-}
 
 describe("up from uninitialized state", function () {
 	var mite;
@@ -19,15 +14,14 @@ describe("up from uninitialized state", function () {
 		}));
 	});
 
-	it("should fail", function (done) {
+	it("should fail", function () {
 		var self = this;
 
-		mite.up([]).then(function () {
+		return mite.up([]).then(function () {
 			self.fail("this should never resolve");
 		}, function (failStatus) {
 			expect(failStatus.fatal).toBe(true);
 			expect(failStatus.initializationRequired).toBe(true);
-			done();
 		});
 	});
 });
@@ -49,12 +43,11 @@ describe("up from clean state", function () {
 		}));
 	});
 
-	it("should do nothing", function (done) {
-		mite.up(migrations).then(function (upStatus) {
+	it("should do nothing", function () {
+		return mite.up(migrations).then(function (upStatus) {
 			expect(upStatus.updated).toBe(false);
 			expect(upStatus.wasClean).toBe(true);
-			done();
-		}, failer(done));
+		});
 	});
 });
 
@@ -124,19 +117,17 @@ describe("up from unexecuted + empty state", function() {
 		expect(status.updated).toBe(true);
 	});
 
-	it("should have a total of 2 executed/tracked", function(done) {
-		mockRepo.all().then(function(tracked) {
+	it("should have a total of 2 executed/tracked", function() {
+		return mockRepo.all().then(function(tracked) {
 			expect(tracked.length).toBe(2);
-			done();
-		}, failer(done));
+		});
 	});
 
-	it("should have executed the migrations sequentially", function(done) {
-		mockRepo.all().then(function(tracked) {
+	it("should have executed the migrations sequentially", function() {
+		return mockRepo.all().then(function(tracked) {
 			expect(tracked[0].key).toBe("1.sql");
 			expect(tracked[1].key).toBe("2.sql");
-			done();
-		}, failer(done));
+		});
 	});
 });
 
@@ -178,10 +169,9 @@ describe("up from unexecuted state with existing executed migrations", function(
 		expect(status.updated).toBe(true);
 	});
 
-	it("should have two tracked migrations", function(done) {
-		mockRepo.all().then(function(allMigrations) {
+	it("should have two tracked migrations", function() {
+		return mockRepo.all().then(function(allMigrations) {
 			expect(allMigrations.length).toBe(2);
-			done();
 		});
 	});
 

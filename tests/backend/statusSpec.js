@@ -1,13 +1,8 @@
+require("jasmine-node-promises")();
+
 var Mite = require("../../lib/mite"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
-
-function failer(done) {
-	return function (err) {
-		this.fail(err);
-		done();
-	};
-}
 
 describe("status from uninitialized state", function() {
 	var mite;
@@ -19,15 +14,14 @@ describe("status from uninitialized state", function() {
 		}));
 	});
 
-	it("should fail", function(done) {
+	it("should fail", function() {
 		var self = this;
 
-		mite.status([]).then(function() {
+		return mite.status([]).then(function() {
 			self.fail("this should never resolve");
 		}, function(failStatus) {
 			expect(failStatus.fatal).toBe(true);
 			expect(failStatus.initializationRequired).toBe(true);
-			done();
 		});
 	});
 });
@@ -42,13 +36,12 @@ describe("status from clean + empty state", function () {
 		}));
 	});
 
-	it("should be clean", function (done) {
+	it("should be clean", function () {
 		var migrations = [];
 
-		mite.status(migrations).then(function (status) {
+		return mite.status(migrations).then(function (status) {
 			expect(status.clean).toBe(true);
-			done();
-		}, failer(done).bind(this));
+		});
 	});
 });
 
