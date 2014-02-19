@@ -105,3 +105,54 @@ describe("stepdown from a simple clean state", function() {
 		expect(argMigration).toEqual(diskMigrations[0]);
 	});
 });
+
+describe("stepdown from a dirty state", function() {
+	var mite,
+		mockRepo,
+		diskMigrations,
+		status;
+
+	beforeEach(function(done) {
+		diskMigrations = [
+			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ", up:"", down:""},
+		];
+
+		mockRepo = new MockRepo({
+			tableExists: true,
+			migrations: [
+				{key: "1.sql", hash: "hZds91zGNRtjbeTqjNRvm1zbKfJJWe5q21FDZeZn", up:"", down:""}
+			]
+		});
+
+		spyOn(mockRepo, "executeDownMigration").andCallThrough();
+
+		mite = new Mite(config, mockRepo);
+
+		mite.stepDown(diskMigrations).then(function(downStatus) {
+			status = downStatus;
+			done();
+		}, done);
+	});
+
+	it("should succeed", function() {
+		expect(status.updated).toBe(true);
+	});
+
+	it("should have no migrations with the key from the old head", function() {
+		return mockRepo.all().then(function(dbMigrations){
+			var some = dbMigrations.some(function(m) {
+				return m.key === diskMigrations[0].key;
+			});
+
+			expect(some).toBe(false);
+		});
+	});
+
+	it("should have called executeDownMigration", function() {
+		expect(mockRepo.executeDownMigration).toHaveBeenCalled();
+		expect(mockRepo.executeDownMigration.callCount).toBe(1);
+
+		var argMigration = mockRepo.executeDownMigration.mostRecentCall.args[0];
+		expect(argMigration).toEqual(diskMigrations[0]);
+	});
+});
