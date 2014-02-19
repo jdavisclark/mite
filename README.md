@@ -1,6 +1,8 @@
-[![Build Status](https://travis-ci.org/jdc0589/mite_npm.png?branch=master)](https://travis-ci.org/jdc0589/mite_npm)
+[![Build Status](https://travis-ci.org/jdc0589/mite-node.png?branch=master)](https://travis-ci.org/jdc0589/mite-node)
 ### Mite
 
-This is a port of Mite http://github.com/soitgoes/mite 
+sql schema and data migrations, using plain old sql as the migration DSL
+___
 
-For the moment for more information refer to it.  Very pre-alph at the moment.
+This is a port of Mite (http://github.com/soitgoes/mite) to nodejs.
+mite-node is very pre-alph at the moment.
