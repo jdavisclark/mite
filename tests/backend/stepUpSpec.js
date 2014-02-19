@@ -88,11 +88,11 @@ describe("stepup from unexecuted state", function() {
 		});
 	});
 
-	it("should call executeMigration the correct number of times", function() {
-		spyOn(mockRepo, "executeMigration").andCallThrough();
+	it("should call executeUpMigration the correct number of times", function() {
+		spyOn(mockRepo, "executeUpMigration").andCallThrough();
 
 		return mite.stepUp(diskMigrations).then(function() {
-			expect(mockRepo.executeMigration.callCount).toBe(1);
+			expect(mockRepo.executeUpMigration.callCount).toBe(1);
 		});
 	});
 });

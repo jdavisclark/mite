@@ -43,7 +43,7 @@ MockMigrationRepository.prototype.createMigrationTable = function() {
 	return def.promise;
 };
 
-MockMigrationRepository.prototype.executeMigration = function(migration) {
+MockMigrationRepository.prototype.executeUpMigration = function(migration) {
 	var def = q.defer();
 
 	this.migrations.push({
@@ -52,6 +52,21 @@ MockMigrationRepository.prototype.executeMigration = function(migration) {
 	});
 
 	process.nextTick(function() {
+		def.resolve();
+	});
+
+	return def.promise;
+};
+
+MockMigrationRepository.prototype.executeDownMigration = function(migration) {
+	var def = q.defer(),
+		self = this;
+
+	process.nextTick(function() {
+		self.migrations = self.migrations.filter(function(m) {
+			return m.key !== migration.key;
+		});
+
 		def.resolve();
 	});
 

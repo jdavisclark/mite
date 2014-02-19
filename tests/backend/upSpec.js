@@ -157,7 +157,7 @@ describe("up from unexecuted state with existing executed migrations", function(
 
 		mite = new Mite(config, mockRepo);
 
-		spyOn(mockRepo, "executeMigration").andCallThrough();
+		spyOn(mockRepo, "executeUpMigration").andCallThrough();
 
 		mite.up(diskMigrations).then(function(upStatus) {
 			status = upStatus;
@@ -176,11 +176,11 @@ describe("up from unexecuted state with existing executed migrations", function(
 	});
 
 	it("should have executed a single migration", function() {
-		expect(mockRepo.executeMigration.callCount).toBe(1);
+		expect(mockRepo.executeUpMigration.callCount).toBe(1);
 	});
 
 	it("should have executed the correct migration", function() {
-		var migrationArg = mockRepo.executeMigration.argsForCall[0][0];
+		var migrationArg = mockRepo.executeUpMigration.argsForCall[0][0];
 		expect(migrationArg.key).toBe(diskMigrations[1].key);
 	});
 });
