@@ -3,6 +3,5 @@ CREATE  TABLE `_migration` (
 	`hash` CHAR(40) NOT NULL COMMENT 'A hash value of the contents of the migration.' ,
 	#`dbHash` CHAR(40) NULL COMMENT 'A hash value of the dump of the current schema (sans data)' ,
 	PRIMARY KEY (`key`) ,
-	UNIQUE INDEX `key_UNIQUE` (`key` ASC) ,
-	UNIQUE INDEX `hash_UNIQUE` (`hash` ASC)
+	UNIQUE INDEX `key_UNIQUE` (`key` ASC)
 );
