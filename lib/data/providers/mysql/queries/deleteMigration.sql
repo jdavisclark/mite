@@ -1,1 +1,1 @@
-delete from _migration where key = ?;
+delete from _migration where _migration.key = ?;

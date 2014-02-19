@@ -55,37 +55,6 @@ describe("stepdown with no executed migrations", function() {
 	});
 });
 
-describe("stepDown from dirty + unexecuted state", function() {
-	var mite,
-		diskMigrations,
-		dbMigrations;
-
-	beforeEach(function() {
-		diskMigrations = [
-			{key:"1.sql", hash:"leJXSSOoiAWErrXpYW09j0CwVKa2U3y5m23zO3Po"},
-			{key: "2.sql", hash:"17PpAOUO17QbsxjNl0AHdB7Uea6v6ZpXQWRW8hFK"}
-		];
-
-		dbMigrations = [
-			{key:"1.sql", hash:"thisHasChangedlx312CYSBRwAVVHyUdwTPK3XXg"}
-		];
-
-		mite = new Mite(config, new MockRepo({
-			tableExists: true,
-			migrations: dbMigrations
-		}));
-	});
-
-	it("should fail due to dirty migrations", function() {
-		return mite.stepDown(diskMigrations).then(function(status) {
-			expect(status.updated).toBe(false);
-			expect(status.dirtyMigrations).not.toBe(undefined);
-		});
-	});
-});
-
-
-
 describe("stepdown from a simple clean state", function() {
 	var mite,
 		mockRepo,
