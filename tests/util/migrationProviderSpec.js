@@ -11,6 +11,14 @@ describe("provider (up only migrations)", function () {
 		provider = new MigrationProvider(path.join(__dirname, "../fixtures/migrationProviderTestMigrations/simple"));
 	});
 
+	it("should get migrations with an up", function() {
+		var migrations = provider.getMigrations();
+		migrations.forEach(function(m) {
+			expect(m.up.length).toBeGreaterThan(0);
+			expect(m.down).toBe(undefined);
+		});
+	});
+
 	it("should get 1 migration", function () {
 		var migrations = provider.getMigrations();
 
