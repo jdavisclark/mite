@@ -1,6 +1,6 @@
 {
 		"name": "mite",
-		"version": "0.0.5",
+		"version": "0.0.6",
 		"description": "sql schema and data migrations, using plain old sql as the migration DSL",
 		"keywords": ["sql", "migration", "migrations"],
 		"homepage": "https://github.com/jdc0589/mite-node",
