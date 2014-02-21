@@ -93,7 +93,7 @@ describe("stepdown from migration without a down", function() {
 
 	it("should report the offending migration key", function() {
 		expect(status.migrationsInPathWithoutDown.length).toBe(1);
-		expect(status.migrationsInPathWithoutDown[0].key).toBe("1.sql");
+		expect(status.migrationsInPathWithoutDown[0]).toBe("1.sql");
 	});
 
 	it("should not have attempted to execute the down", function() {
