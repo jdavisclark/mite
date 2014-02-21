@@ -52,8 +52,7 @@ describe("up from clean state", function () {
 });
 
 describe("up from dirty state", function () {
-	var upStatus,
-		fail = false;
+	var upStatus;
 
 	beforeEach(function (done) {
 		var mite = new Mite(config, new MockRepo({
@@ -72,9 +71,7 @@ describe("up from dirty state", function () {
 		mite.up(diskMigrations).then(function (status) {
 			upStatus = status;
 			done();
-		}, function () {
-			fail = true;
-		});
+		}, done);
 	});
 
 	it("should not update", function () {
@@ -110,7 +107,7 @@ describe("up from unexecuted + empty state", function() {
 		mite.up(diskMigrations).then(function(upStatus) {
 			status = upStatus;
 			done();
-		});
+		}, done);
 	});
 
 	it("should update successfully", function() {
@@ -145,7 +142,7 @@ describe("up from unexecuted state with existing executed migrations", function(
 		];
 
 		dbMigrations = [
-			diskMigrations[0]
+			{key:"1.sql", hash: "c51VLU6JCmXht8rEQLflLFO39H4PaTUaW746yTdG"},
 		];
 
 		status = undefined;
@@ -162,7 +159,7 @@ describe("up from unexecuted state with existing executed migrations", function(
 		mite.up(diskMigrations).then(function(upStatus) {
 			status = upStatus;
 			done();
-		});
+		}, done);
 	});
 
 	it("should succeed", function() {
@@ -173,6 +170,10 @@ describe("up from unexecuted state with existing executed migrations", function(
 		return mockRepo.all().then(function(allMigrations) {
 			expect(allMigrations.length).toBe(2);
 		});
+	});
+
+	it("should have called executeUpMigration", function() {
+		expect(mockRepo.executeUpMigration).toHaveBeenCalled();
 	});
 
 	it("should have executed a single migration", function() {

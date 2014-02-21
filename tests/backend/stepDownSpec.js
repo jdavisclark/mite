@@ -92,7 +92,8 @@ describe("stepdown from migration without a down", function() {
 	});
 
 	it("should report the offending migration key", function() {
-		expect(status.migrationKey).toBe("1.sql");
+		expect(status.migrationsInPathWithoutDown.length).toBe(1);
+		expect(status.migrationsInPathWithoutDown[0].key).toBe("1.sql");
 	});
 
 	it("should not have attempted to execute the down", function() {
@@ -104,6 +105,7 @@ describe("stepdown from a simple clean state", function() {
 	var mite,
 		mockRepo,
 		diskMigrations,
+		dbMigrations,
 		status;
 
 	beforeEach(function(done) {
@@ -111,12 +113,14 @@ describe("stepdown from a simple clean state", function() {
 			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ", up:"the up", down:"the down"},
 			{key: "2.sql", hash: "zMDBESlxVWWKos7Dps1gw332wEVWUMv7ASByiwOz", up: "the up 2", down: "the down 2"}
 		];
+		dbMigrations = [
+			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ"},
+			{key: "2.sql", hash: "zMDBESlxVWWKos7Dps1gw332wEVWUMv7ASByiwOz"}
+		];
 
 		mockRepo = new MockRepo({
 			tableExists: true,
-			migrations: diskMigrations.map(function(m) {
-				return {key: m.key, hash: m.hash};
-			})
+			migrations: dbMigrations
 		});
 
 		spyOn(mockRepo, "executeDownMigration").andCallThrough();
@@ -133,13 +137,18 @@ describe("stepdown from a simple clean state", function() {
 		expect(status.updated).toBe(true);
 	});
 
-	it("should have no migrations with the key from the old head", function() {
-		return mockRepo.all().then(function(dbMigrations){
-			var some = dbMigrations.some(function(m) {
-				return m.key === diskMigrations[diskMigrations.length - 1].key;
-			});
+	it("should have the correct status + head", function() {
+		return mite.status(diskMigrations).then(function(mStatus) {
+			expect(mStatus.clean).toBe(false);
 
-			expect(some).toBe(false);
+			//correct unexecuted migrations
+			expect(mStatus.unexecutedMigrations).not.toBe(undefined);
+			expect(mStatus.unexecutedMigrations.length).toBe(1);
+			expect(mStatus.unexecutedMigrations.pop()).toBe("2.sql");
+
+			//correct head
+			expect(mStatus.executedMigrations.length).toBe(1);
+			expect(mStatus.executedMigrations.pop()).toBe("1.sql");
 		});
 	});
 
