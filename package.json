@@ -1,49 +1,54 @@
 {
-		"name": "mite",
-		"version": "0.0.7",
-		"description": "sql schema and data migrations, using plain old sql as the migration DSL",
-		"keywords": ["sql", "migration", "migrations"],
-		"homepage": "https://github.com/jdc0589/mite-node",
-		"bugs": "https://github.com/jdc0589/mite-node/issues",
-		"license": "MIT",
-		"author": {
-				"name": "Davis Clark",
-				"url": "https://github.com/jdc0589"
-		},
-		"contributors": [
-				{
-						"name": "Martin Murphy",
-						"url": "https://github.com/soitgoes"
-				}
-		],
-		"repository": {
-				"type": "git",
-				"url": "http://github.com/jdc0589/mide-node.git"
-		},
-		"index": "./lib/mite",
-		"main": "./lib/mite",
-		"directories": {
-				"lib": "./lib",
-				"templates": "./templates",
-				"tests": "./tests"
-		},
-		"dependencies": {
-				"commander": "~2.1.0",
-				"mysql": "~2.0.1",
-				"q": "~1.0.0",
-				"colors": "~0.6.2",
-				"rimraf": "~2.2.6",
-				"fs.extra": "~1.2.1"
-		},
-		"devDependencies": {
-				"jasmine-node": "~1.13.1",
-				"jasmine-node-promises": "~1.0.0"
-		},
-		"preferGlobal": true,
-		"bin": {
-				"mite": "./lib/cli.js"
-		},
-		"scripts": {
-				"test": "./node_modules/.bin/jasmine-node tests/"
-		}
+  "name": "mite",
+  "version": "0.0.7",
+  "description": "sql schema and data migrations, using plain old sql as the migration DSL",
+  "keywords": [
+    "sql",
+    "migration",
+    "migrations"
+  ],
+  "homepage": "https://github.com/jdc0589/mite-node",
+  "bugs": "https://github.com/jdc0589/mite-node/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Davis Clark",
+    "url": "https://github.com/jdc0589"
+  },
+  "contributors": [
+    {
+      "name": "Martin Murphy",
+      "url": "https://github.com/soitgoes"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jdc0589/mide-node.git"
+  },
+  "index": "./lib/mite",
+  "main": "./lib/mite",
+  "directories": {
+    "lib": "./lib",
+    "templates": "./templates",
+    "tests": "./tests"
+  },
+  "dependencies": {
+    "commander": "~2.1.0",
+    "mysql": "~2.0.1",
+    "q": "~1.0.0",
+    "colors": "~0.6.2",
+    "rimraf": "~2.2.6",
+    "fs.extra": "~1.2.1",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.13.1",
+    "jasmine-node-promises": "~1.0.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "mite": "./lib/cli.js"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node tests/"
+  }
 }
