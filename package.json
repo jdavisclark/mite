@@ -46,7 +46,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "mite": "./lib/cli.js"
+    "mite": "./lib/cli/index.js"
   },
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node tests/"

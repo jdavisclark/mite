@@ -1,4 +1,8 @@
 {
 	"migrationExtension": ".sql",
-	"host": "localhost"
+	"host": "localhost",
+	"diff": {
+		"cmd": "diff",
+		"args": ["-C", "5", "{proper}", "{current}"]
+	}
 }
