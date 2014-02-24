@@ -1,7 +1,7 @@
 {
   "name": "mite",
   "version": "0.0.7",
-  "description": "sql schema and data migrations, using plain old sql as the migration DSL",
+  "description": "SQL schema migrations so easy you already know how to write them. guaranteed.",
   "keywords": [
     "sql",
     "migration",
