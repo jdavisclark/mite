@@ -31,7 +31,7 @@ Once mite is initialized, execute `mite create`.
 This will create a template for your first migration in `migrations/`, identified by a timestamp. Open the new fiile up, and after the `/* mite:up */` comment add some statements to create a new table/tables.
 After the `/* mite:down */` comment, add statements to rollback anything done in the `up` section (usually `drop table` statements).
 
-Next, run `mite status`. It should tell you there is an unexecuted migration. This means you have some migrations defined on disk that haven't been executed yet. 
+Next, run `mite status`. It should tell you there is an unexecuted migration. This means you have some migrations defined on disk that haven't been executed yet.
 
 Execute `mite up` to run any unexecuted migrations. New tables defined in the `up` section of you first migration should now exist in your database, and a subsequent call to `mite status` should report that the state is clean.
 
@@ -44,7 +44,7 @@ Thats it! You just set up mite and created + ran your first migration.
 mite uses a lot of `git` style commands and subcommands. You can execute mite commands from anywhere within a mite project, even in subdirectories. `mite help` or `mite help [command]` will always give you usage information.
 
 
-**version** - displays the current version of mite. 
+**version** - displays the current version of mite.
 
 **status** - displays the migration status. the status can be clean, unexecuted, or dirty.
 
@@ -97,3 +97,16 @@ The mite.config file, by default, will contain the following:
 To run the unit tests, make sure all dependencies are up to date via `npm install` and run:
 
 	npm test
+
+
+# Contributing
+Pull requests are always welcome; just try and open an issue about the feature/change you are making first so we have a chance to briefly discuss it. If you are making changes to the backend (lib/mite.js) or the migration provider, make to add tests.
+
+### setting up a dev environment
+1. fork this repo
+2. clone your fork locally
+3. if you already have mite installed, remove it via `npm uninstall --global mite`
+4. cd in to your local repo
+5. execute `npm link`
+
+After that, the `mite` in your path is linked to you local repo, so any changes you make are immediately live.
