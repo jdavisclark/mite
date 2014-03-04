@@ -5,7 +5,7 @@ var Mite = require("../../lib/mite"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
 
 
-describe("stepdown from uninitialized state", function () {
+describe("down from uninitialized state", function () {
 	var mite;
 
 	beforeEach(function () {
@@ -17,7 +17,7 @@ describe("stepdown from uninitialized state", function () {
 	it("should fail due to initialization", function () {
 		var self = this;
 
-		return mite.stepDown([]).then(function() {
+		return mite.down([]).then(function() {
 			self.fail("should never resolve");
 		}, function(status) {
 			expect(status.initializationRequired).toBe(true);
@@ -26,14 +26,14 @@ describe("stepdown from uninitialized state", function () {
 	});
 });
 
-describe("stepdown with no executed migrations", function() {
+describe("down with no executed migrations", function() {
 	it("should fail with no unexecuted migrations", function() {
 		var mite = new Mite(config, new MockRepo({
 			tableExists: true,
 			migrations: []
 		}));
 
-		return mite.stepDown([]).then(function(downStat) {
+		return mite.down([]).then(function(downStat) {
 			expect(downStat.updated).toBe(false);
 			expect(downStat.noExecutedMigrations).toBe(true);
 		});
@@ -48,14 +48,14 @@ describe("stepdown with no executed migrations", function() {
 				{key: "1.sql", up:"", down:""}
 			];
 
-		return mite.stepDown(diskMigrations).then(function(downStat) {
+		return mite.down(diskMigrations).then(function(downStat) {
 			expect(downStat.updated).toBe(false);
 			expect(downStat.noExecutedMigrations).toBe(true);
 		});
 	});
 });
 
-describe("stepdown from migration without a down", function() {
+describe("down with migrations missing down", function() {
 	var mite,
 		mockRepo,
 		diskMigrations,
@@ -64,10 +64,14 @@ describe("stepdown from migration without a down", function() {
 
 	beforeEach(function(done) {
 		diskMigrations = [
-			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg", up:"the up"}
+			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg", up:"the up"},
+			{key: "2.sql", hash:"UwktX4l0Xk0xBRaBvhPP9T6AuvxVsH2TxD9ZbBbD", up:"the up", down: "the down"},
+			{key: "3.sql", hash:"Ou3z3fZK4LpS5Rd8g0so6nqZbladwjUtpQ5YjJyK", up:"the up"}
 		];
 		dbMigrations = [
-			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg"}
+			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg"},
+			{key: "2.sql", hash:"UwktX4l0Xk0xBRaBvhPP9T6AuvxVsH2TxD9ZbBbD"},
+			{key: "3.sql", hash:"Ou3z3fZK4LpS5Rd8g0so6nqZbladwjUtpQ5YjJyK"}
 		];
 		mockRepo = new MockRepo({
 			tableExists: true,
@@ -77,7 +81,7 @@ describe("stepdown from migration without a down", function() {
 		spyOn(mockRepo, "executeDownMigration").andCallThrough();
 
 		mite = new Mite(config, mockRepo);
-		mite.stepDown(diskMigrations).then(function(downStatus) {
+		mite.down(diskMigrations).then(function(downStatus) {
 			status = downStatus;
 			done();
 		}, done);
@@ -92,8 +96,9 @@ describe("stepdown from migration without a down", function() {
 	});
 
 	it("should report the offending migration key", function() {
-		expect(status.migrationsInPathWithoutDown.length).toBe(1);
-		expect(status.migrationsInPathWithoutDown[0]).toBe("1.sql");
+		expect(status.migrationsInPathWithoutDown.length).toBe(2);
+		expect(status.migrationsInPathWithoutDown[1]).toBe("1.sql");
+		expect(status.migrationsInPathWithoutDown[0]).toBe("3.sql");
 	});
 
 	it("should not have attempted to execute the down", function() {
@@ -101,7 +106,7 @@ describe("stepdown from migration without a down", function() {
 	});
 });
 
-describe("stepdown from a simple clean state", function() {
+describe("down from a simple clean state", function() {
 	var mite,
 		mockRepo,
 		diskMigrations,
@@ -127,7 +132,7 @@ describe("stepdown from a simple clean state", function() {
 
 		mite = new Mite(config, mockRepo);
 
-		mite.stepDown(diskMigrations).then(function(downStatus) {
+		mite.down(diskMigrations).then(function(downStatus) {
 			status = downStatus;
 			done();
 		}, done);
@@ -143,71 +148,18 @@ describe("stepdown from a simple clean state", function() {
 
 			//correct unexecuted migrations
 			expect(mStatus.unexecutedMigrations).not.toBe(undefined);
-			expect(mStatus.unexecutedMigrations.length).toBe(1);
-			expect(mStatus.unexecutedMigrations.pop()).toBe("2.sql");
+			expect(mStatus.unexecutedMigrations.length).toBe(2);
 
-			//correct head
-			expect(mStatus.executedMigrations.length).toBe(1);
-			expect(mStatus.executedMigrations.pop()).toBe("1.sql");
+			//executed
+			expect(mStatus.executedMigrations.length).toBe(0);
 		});
 	});
 
 	it("should have called executeDownMigration", function() {
 		expect(mockRepo.executeDownMigration).toHaveBeenCalled();
-		expect(mockRepo.executeDownMigration.callCount).toBe(1);
+		expect(mockRepo.executeDownMigration.callCount).toBe(2);
 
-		var argMigration = mockRepo.executeDownMigration.mostRecentCall.args[0];
-		expect(argMigration).toEqual(diskMigrations[diskMigrations.length - 1]);
-	});
-});
-
-describe("stepdown from a dirty state", function() {
-	var mite,
-		mockRepo,
-		diskMigrations,
-		status;
-
-	beforeEach(function(done) {
-		diskMigrations = [
-			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ", up:"the up", down:"the down"},
-		];
-
-		mockRepo = new MockRepo({
-			tableExists: true,
-			migrations: [
-				{key: "1.sql", hash: "hZds91zGNRtjbeTqjNRvm1zbKfJJWe5q21FDZeZn"}
-			]
-		});
-
-		spyOn(mockRepo, "executeDownMigration").andCallThrough();
-
-		mite = new Mite(config, mockRepo);
-
-		mite.stepDown(diskMigrations).then(function(downStatus) {
-			status = downStatus;
-			done();
-		}, done);
-	});
-
-	it("should succeed", function() {
-		expect(status.updated).toBe(true);
-	});
-
-	it("should have no migrations with the key from the old head", function() {
-		return mockRepo.all().then(function(dbMigrations){
-			var some = dbMigrations.some(function(m) {
-				return m.key === diskMigrations[0].key;
-			});
-
-			expect(some).toBe(false);
-		});
-	});
-
-	it("should have called executeDownMigration", function() {
-		expect(mockRepo.executeDownMigration).toHaveBeenCalled();
-		expect(mockRepo.executeDownMigration.callCount).toBe(1);
-
-		var argMigration = mockRepo.executeDownMigration.mostRecentCall.args[0];
-		expect(argMigration).toEqual(diskMigrations[0]);
+		expect(mockRepo.executeDownMigration.calls[0].args[0]).toEqual(diskMigrations[1]);
+		expect(mockRepo.executeDownMigration.calls[1].args[0]).toEqual(diskMigrations[0]);
 	});
 });
