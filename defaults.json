@@ -5,5 +5,13 @@
 	"diff": {
 		"cmd": "diff",
 		"args": ["-C", "5", "{proper}", "{current}"]
+	},
+	"open": {
+		"osx": {
+			"cmd": "open",
+			"args": ["{path}"]
+		},
+		"windows": {},
+		"linux": {}
 	}
 }
