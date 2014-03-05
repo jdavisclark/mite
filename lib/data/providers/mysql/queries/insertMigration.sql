@@ -1,1 +1,1 @@
-insert into _migration values (?, ?, ?);
+insert into _migration values (?, ?);
