@@ -13,5 +13,6 @@
 		},
 		"windows": {},
 		"linux": {}
-	}
+	},
+	"submodules": true
 }
