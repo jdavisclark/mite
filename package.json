@@ -39,7 +39,8 @@
     "rimraf": "~2.2.6",
     "fs.extra": "~1.2.1",
     "underscore": "~1.6.0",
-    "diff": "~1.0.8"
+    "diff": "~1.0.8",
+    "glob": "^3.2.9"
   },
   "devDependencies": {
     "jasmine-node": "~1.13.1",
