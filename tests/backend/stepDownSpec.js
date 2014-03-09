@@ -1,9 +1,15 @@
 require("jasmine-node-promises")();
 
 var Mite = require("../../lib/mite"),
+	Migration = require("../../lib/migration"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
 
+function createMigrations(bases) {
+	return bases.map(function(data) {
+		return new Migration(data);
+	});
+}
 
 describe("stepdown from uninitialized state", function () {
 	var mite;
@@ -44,9 +50,9 @@ describe("stepdown with no executed migrations", function() {
 				tableExists: true,
 				migrations: []
 			})),
-			diskMigrations = [
+			diskMigrations = createMigrations([
 				{key: "1.sql", up:"", down:""}
-			];
+			]);
 
 		return mite.stepDown(diskMigrations).then(function(downStat) {
 			expect(downStat.updated).toBe(false);
@@ -63,12 +69,12 @@ describe("stepdown from migration without a down", function() {
 		status;
 
 	beforeEach(function(done) {
-		diskMigrations = [
+		diskMigrations = createMigrations([
 			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg", up:"the up"}
-		];
-		dbMigrations = [
+		]);
+		dbMigrations = createMigrations([
 			{key: "1.sql", hash:"hrPitCfgaDZq6u1OXrZVVYqiLPqAik4gtVWYXmYg"}
-		];
+		]);
 		mockRepo = new MockRepo({
 			tableExists: true,
 			migrations: dbMigrations
@@ -109,14 +115,14 @@ describe("stepdown from a simple clean state", function() {
 		status;
 
 	beforeEach(function(done) {
-		diskMigrations = [
+		diskMigrations = createMigrations([
 			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ", up:"the up", down:"the down"},
 			{key: "2.sql", hash: "zMDBESlxVWWKos7Dps1gw332wEVWUMv7ASByiwOz", up: "the up 2", down: "the down 2"}
-		];
-		dbMigrations = [
+		]);
+		dbMigrations = createMigrations([
 			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ"},
 			{key: "2.sql", hash: "zMDBESlxVWWKos7Dps1gw332wEVWUMv7ASByiwOz"}
-		];
+		]);
 
 		mockRepo = new MockRepo({
 			tableExists: true,
@@ -168,15 +174,15 @@ describe("stepdown from a dirty state", function() {
 		status;
 
 	beforeEach(function(done) {
-		diskMigrations = [
+		diskMigrations = createMigrations([
 			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ", up:"the up", down:"the down"},
-		];
+		]);
 
 		mockRepo = new MockRepo({
 			tableExists: true,
-			migrations: [
+			migrations: createMigrations([
 				{key: "1.sql", hash: "hZds91zGNRtjbeTqjNRvm1zbKfJJWe5q21FDZeZn"}
-			]
+			])
 		});
 
 		spyOn(mockRepo, "executeDownMigration").andCallThrough();

@@ -1,8 +1,15 @@
 require("jasmine-node-promises")();
 
 var Mite = require("../../lib/mite"),
+	Migration = require("../../lib/migration"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
+
+function createMigration (bases) {
+	return bases.map(function(data) {
+		return new Migration(data);
+	});
+}
 
 
 describe("stepup from uninitialized state", function () {
@@ -32,14 +39,14 @@ describe("stepup from dirty + unexecuted state", function() {
 		dbMigrations;
 
 	beforeEach(function() {
-		diskMigrations = [
+		diskMigrations = createMigration([
 			{key:"1.sql", hash:"leJXSSOoiAWErrXpYW09j0CwVKa2U3y5m23zO3Po"},
 			{key: "2.sql", hash:"17PpAOUO17QbsxjNl0AHdB7Uea6v6ZpXQWRW8hFK"}
-		];
+		]);
 
-		dbMigrations = [
+		dbMigrations = createMigration([
 			{key:"1.sql", hash:"thisHasChangedlx312CYSBRwAVVHyUdwTPK3XXg"}
-		];
+		]);
 
 		mite = new Mite(config, new MockRepo({
 			tableExists: true,
@@ -61,10 +68,10 @@ describe("stepup from unexecuted state", function() {
 		diskMigrations;
 
 	beforeEach(function() {
-		diskMigrations = [
+		diskMigrations = createMigration([
 			{key: "1.sql", hash: "NIZxtDV8hHfJLXsCH0m2wZ7OGOb8ejcyCZIlDBjZ"},
 			{key: "2.sql", hash: "MHUd0IhqlWv2nr21o1HT3nuWeHEl5dwLywhQns4Z"}
-		];
+		]);
 
 		mockRepo = new MockRepo({
 			tableExists: true,
