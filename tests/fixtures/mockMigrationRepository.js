@@ -18,12 +18,14 @@ MockMigrationRepository.prototype.isInitialized = function() {
 	return def.promise;
 };
 
-MockMigrationRepository.prototype.all = function() {
+MockMigrationRepository.prototype.all = function(submodule) {
 	var def = q.defer(),
 		self = this;
 
 	process.nextTick(function() {
-		def.resolve(self.migrations);
+		def.resolve(self.migrations.filter(function(m) {
+			return submodule ? m.submodule == submodule : true;
+		}));
 	});
 
 	return def.promise;
@@ -48,7 +50,8 @@ MockMigrationRepository.prototype.executeUpMigration = function(migration) {
 
 	this.migrations.push({
 		key: migration.key,
-		hash: migration.hash
+		hash: migration.hash,
+		submodule: migration.submodule || null
 	});
 
 	process.nextTick(function() {
@@ -64,7 +67,7 @@ MockMigrationRepository.prototype.executeDownMigration = function(migration) {
 
 	process.nextTick(function() {
 		self.migrations = self.migrations.filter(function(m) {
-			return m.key !== migration.key;
+			return m.key !== migration.key && m.submodule == migration.submodule;
 		});
 
 		def.resolve();
