@@ -40,7 +40,7 @@
     "fs.extra": "~1.2.1",
     "underscore": "~1.6.0",
     "diff": "~1.0.8",
-    "glob": "^3.2.9"
+    "file": "^0.2.2"
   },
   "devDependencies": {
     "jasmine-node": "~1.13.1",
