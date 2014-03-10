@@ -1,6 +1,3 @@
 node_modules/*
-mite.config
-.mite
 mite_test_home/*
 mite.sublime-workspace
-migrations/*
