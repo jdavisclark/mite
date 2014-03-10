@@ -14,5 +14,6 @@
 		"windows": {},
 		"linux": {}
 	},
-	"submodules": true
+	"submodules": true,
+	"name": "."
 }
