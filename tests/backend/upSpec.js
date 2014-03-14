@@ -185,3 +185,58 @@ describe("up from unexecuted state with existing executed migrations", function(
 		expect(migrationArg.key).toBe(diskMigrations[1].key);
 	});
 });
+
+describe("up", function() {
+	var diskMigrations,
+		dbMigrations,
+		repo,
+		mite,
+		upStat;
+
+	beforeEach(function() {
+		diskMigrations = [
+			{key:"2014-02-17.sql", hash: "6QNbMGYnQUXzWz0dmkxA4FHfh3tJv9Cn7Ozqe10b", up: "the up", down: "the down"},
+			{key:"2014-02-18T17-50-55.sql", hash: "XZi9plrO13VMDU5C7mkrIeWboSyTEa5c6huHsxf6", up: "the up", down: "the down"},
+			{key:"2014-02-21T15-35-59.sql", hash: "eQ3b58J3SPga4tvFE4MjMy3IjTgYhsTYWaFWumBd", up: "the up", down: "the down"},
+			{key:"2014-02-21T18-02-24.sql", hash: "cwC5EzQ8u3MScCLwXf3rtDZhPbVxCxxRWwAdA7oY", up: "the up", down: "the down"},
+			{key:"2014-02-22T17-13-35Z.sql", hash: "fvEWwq18yKgRoY4j389kKmYFNP1mnk1wVDgmxZPk", up: "the up", down: "the down"},
+			{key:"2014-02-25T18-56-36.sql", hash: "M2xpX29Qz9VVkpy5cdcw29cQ78PUYXvPrc5Qs1i9", up: "the up", down: "the down"},
+			{key:"2014-03-02T13-08-16Z.sql", hash: "boLiPZC0mqxszqK2ovJd04RiFaN6wJHsCd4UbsRf", up: "the up", down: "the down"},
+			{key:"2014-03-09T19-16-32Z.sql", hash: "Azes9abK3X9TMXrBLiwddJMr1Qok3vxtgHp5CZzr", up: "the up", down: "the down"},
+			{key:"2014-03-11T16-36-15Z.sql", hash: "6ePmrxDLu7Zg0iDUdOuyzWjnZbeKrLdCCathCYNj", up: "the up", down: "the down"},
+			{key:"2014-03-12T14-54-19Z.sql", hash: "milWR3htywsMnWT6gUQb5fWIdkde6oV09h9iEBth", up: "the up", down: "the down"},
+			{key:"2014-03-14T02-13-27Z.sql", hash: "1rs8o0RDjyVzbpRfKTy1pJ5ordVKFLHueydYqPDA", up: "the up", down: "the down"}
+		];
+		dbMigrations = [
+			{key:"2014-02-17.sql", hash: "6QNbMGYnQUXzWz0dmkxA4FHfh3tJv9Cn7Ozqe10b"},
+			{key:"2014-02-18T17-50-55.sql", hash: "XZi9plrO13VMDU5C7mkrIeWboSyTEa5c6huHsxf6"},
+			{key:"2014-02-21T15-35-59.sql", hash: "eQ3b58J3SPga4tvFE4MjMy3IjTgYhsTYWaFWumBd"},
+			{key:"2014-02-21T18-02-24.sql", hash: "cwC5EzQ8u3MScCLwXf3rtDZhPbVxCxxRWwAdA7oY"},
+			{key:"2014-02-22T17-13-35Z.sql", hash: "fvEWwq18yKgRoY4j389kKmYFNP1mnk1wVDgmxZPk"},
+			{key:"2014-02-25T18-56-36.sql", hash: "M2xpX29Qz9VVkpy5cdcw29cQ78PUYXvPrc5Qs1i9"},
+			{key:"2014-03-02T13-08-16Z.sql", hash: "boLiPZC0mqxszqK2ovJd04RiFaN6wJHsCd4UbsRf"},
+			{key:"2014-03-09T19-16-32Z.sql", hash: "Azes9abK3X9TMXrBLiwddJMr1Qok3vxtgHp5CZzr"},
+			{key:"2014-03-11T16-36-15Z.sql", hash: "6ePmrxDLu7Zg0iDUdOuyzWjnZbeKrLdCCathCYNj"},
+			{key:"2014-03-12T14-54-19Z.sql", hash: "milWR3htywsMnWT6gUQb5fWIdkde6oV09h9iEBth"}
+		];
+
+		repo = new MockRepo({
+			tableExists: true,
+			migrations: dbMigrations
+		});
+
+		mite = new Mite(config, repo);
+
+		return mite.up(diskMigrations).then(function(stat) {
+			upStat = stat;
+		});
+	});
+
+	it("should succeed", function() {
+		expect(upStat.updated).toBe(true);
+	});
+
+	it("should not have dirty migrations", function() {
+		expect(upStat.dirtyMigrations).toBe(undefined);
+	});
+});
