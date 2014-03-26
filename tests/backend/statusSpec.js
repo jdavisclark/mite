@@ -1,8 +1,15 @@
 require("jasmine-node-promises")();
 
 var Mite = require("../../lib/mite"),
+	Migration = require("../../lib/migration"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
+
+function createMigrations(bases) {
+	return bases.map(function(data) {
+		return new Migration(data);
+	});
+}
 
 describe("status from uninitialized state", function() {
 	var mite;
@@ -48,9 +55,9 @@ describe("status from clean + empty state", function () {
 
 describe("status from a clean state with migrations", function() {
 	var status,
-		migrations = [
+		migrations = createMigrations([
 			{key: "1.sql", hash: "AvmmE9MLGClDh7h8diKpDzhJLcZeCrLyKL4UnSX4", up: "stuff goes here"}
-		],
+		]),
 		repo = new MockRepo({
 			tableExists: true,
 			migrations: migrations
@@ -72,10 +79,10 @@ describe("status from a clean state with migrations", function() {
 
 describe("status from unexecuted state", function () {
 	var status,
-		migrations = [{
+		migrations = createMigrations([{
 			key: "1.sql",
 			hash: "rnFiJsJRCsd0sqAsxKhaVnJ4hVhJpjtDZOsjFvob"
-		}];
+		}]);
 
 	beforeEach(function (done) {
 		var mite = new Mite(config, new MockRepo({
@@ -103,14 +110,14 @@ describe("status from unexecuted state", function () {
 
 describe("status from a dirty state", function() {
 	var status,
-		dbMigrations = [
+		dbMigrations = createMigrations([
 			{ key: "1.sql", hash: "nVsKv4YS0Se0SlXEGRN9jibI7sjzo2LG5dtHWEn3" },
 			{ key: "2.sql", hash: "4g7282OdnvCB3jbOrAXzmiN7av33aeJ3xsGvtMz8" }
-		],
-		diskMigrations = [
+		]),
+		diskMigrations = createMigrations([
 			{ key: "1.sql", hash: "this has changed........................" },
 			{ key: "2.sql", hash: "4g7282OdnvCB3jbOrAXzmiN7av33aeJ3xsGvtMz8" }
-		];
+		]);
 
 	beforeEach(function(done) {
 		var mite = new Mite(config, new MockRepo({

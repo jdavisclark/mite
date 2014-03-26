@@ -13,5 +13,8 @@
 		},
 		"windows": {},
 		"linux": {}
-	}
+	},
+	"submodules": true,
+	"reportSubmoduleSummaryStatus": true,
+	"name": "."
 }
