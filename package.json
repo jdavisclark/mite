@@ -40,7 +40,8 @@
     "fs.extra": "~1.2.1",
     "underscore": "~1.6.0",
     "diff": "~1.0.8",
-    "file": "^0.2.2"
+    "file": "^0.2.2",
+    "npm": "^1.4.6"
   },
   "devDependencies": {
     "jasmine-node": "~1.13.1",
@@ -48,7 +49,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "mite": "./lib/cli/index.js"
+    "mite": "./lib/global.js"
   },
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node tests/"
