@@ -93,6 +93,40 @@ The mite.config file, by default, will contain the following:
 **port** - the port of for your database server
 
 
+## submodules
+
+submodules allow a mite project to, in addition to a normal set of migrations, know about migrations defined in dependencies of you main project.
+
+__use case:__
+You are working on a todo web application, 'todoer'. You have an abstracted library, 'authenticator', that handles user/role management; it requires some tables in your database. We will pretend this is a nodejs application, you project structure looks like this:
+
+![structure](http://i.imgur.com/1biTJWt.png)
+
+All the migrations for todoer are executed, but you just installed the authenticator dependency.
+
+Running `mite status` now produces:
+
+![status](http://imgur.com/fjxWLP8.png)
+
+cool! mite knows about our submodule now. `mite submodules` produces:
+
+![submodules](http://i.imgur.com/5Hmnaxa.png)
+
+Lets get a better idea of what authenticator's migration status looks like:
+
+![sub status](http://i.imgur.com/kCWYkre.png)
+
+alright, well we need to execute an `up` to get everything clean:
+
+![sub up](http://i.imgur.com/SIT1Zfd.png)
+
+now `status` produces:
+
+![clean status](http://i.imgur.com/ZyfY59f.png)
+
+thats it. submodules inherit all settings from the `.mite` config of your main project. submodules need migrations + a `.mite` file, but it can be empty right now. the other mite commands work on submodules too. 
+
+
 ## Running Tests
 To run the unit tests, make sure all dependencies are up to date via `npm install` and run:
 
