@@ -1,0 +1,29 @@
+h1,h2,h3 {
+  font-family: @title-font;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  color: @light-text;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p,span,a,code,pre {
+  font-family: @body-font;
+}
+
+a {
+  color: @cta-text;
+  &:hover {
+    color: darken(@cta-text, 10%);
+    text-decoration: none;
+  }
+}

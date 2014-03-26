@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+
+<div class="row">
+  <div class="col-md-3 col-xs-5">
+    <img src="img/mite.png" alt="Mite logo" class="logo">
+  </div>
+  <div class="col-md-9 col-xs-7">
+    <h1 id="home">Mite <br><small>A Migration Utility</small></h1>
+  </div>
+</div>
+
+<p class="lead">The goal of Mite is to make database migrations so simple and painless that doing migrations is easier than not doing them.</p>
+
+<a class="cta" href="https://github.com/soitgoes/mite">Check out the GitHub repo &rarr;</a>
+
+<hr>
+
+<h2 id="tenets">Tenets of Mite</h2>
+
+<ul>
+  <li>SQL is a perfectly good DSL (Domain-Specific Language)</li>
+  <li>Developers know and have tools for SQL.</li>
+  <li>Down migrations are required for expected behavior on conflict resolution.</li>
+  <li>Order is significant in migrations and is enforced.</li>
+  <li>Migrations should be language agonostic. So a utility is appropriate.</li>
+  <li>Database consistency with the migrations should be enforced. We should be aware of altered migrations.</li>
+</ul>
+
+<hr>
+
+<h2 id="installation">Installation</h3>
+<ol>
+  <li><a href="#">Download the distributable</a> or build from source.</li>
+  <li>Add the location of Mite.exe to your PATH variable.</li>
+</ol>
+
+<hr>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="new-project">For new projects: </h3>
+<p>It's best to have your migrations stay in their own folder, so create one for them: <kbd>mkdir migrations</kbd> (then <kbd>cd</kbd> into that folder).</p>
+<p>Run <kbd>mite init</kbd> within this directory.  This will take you through a short wizard and spit out a config file that looks something like this:</p>
+<pre>
+  {
+    "database": "mitedevel",
+    "host": "localhost",
+    "user": "mite",
+    "password": "mite",
+    "dialect": "mysql",
+    "port": 3306
+  }
+</pre>
+
+<p>Got it? Proceed to <a href="#first-migration">writing your first migration</a>.</p>
+
+
+<h3 id="existing-project">For existing projects:</h3>
+<p>Same steps as above. No, really.</p>
+
+<h3 id="powering-up">Powering up an existing Mite project: </h3>
+<p>Make sure that you have an empty database created and are in your scripts directory. Then run <kbd>mite update</kbd> and you're good to go.</p>
+
+<hr>
+
+<h2 id="first-migration">Writing your first migration</h2>
+<p>Migrations with Mite are literally just SQL (well, with some comments).</p>
+
+<pre>
+  /* up */
+  CREATE TABLE dbo.test
+    (
+    id int NOT NULL
+    )  ON [PRIMARY]
+  GO
+  /* down */
+  drop table dbo.test
+</pre>
+
+<p>Running <kbd>mite -c</kbd> will create a template for you. Just fill it in with, yknow, SQL.</p>
+
+<p>Full documentation is available <a href="https://github.com/soitgoes/mite">on GitHub</a>.</p>
+
+<hr>
+
+<h2 id="license">The MIT License</h2>
+<div class="license">
+<p>Copyright &copy; 2011 Whiteboard-IT LLC</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</div>
