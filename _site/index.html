@@ -17,7 +17,6 @@
         <ul>
           <li><a href="#new-project">For new projects</a></li>
           <li><a href="#existing-project">For existing projects</a></li>
-          <li><a href="#powering-up">Powering up an existing Mite project</a></li>
         </ul>
 
         <li><a href="#first-migration">Your first migration</a></li>
@@ -34,9 +33,9 @@
   </div>
 </div>
 
-<p class="lead">The goal of Mite is to make database migrations so simple and painless that doing migrations is easier than not doing them.</p>
+<p class="lead">sql schema migrations so easy you already know how to do them</p>
 
-<a class="cta" href="https://github.com/soitgoes/mite">Check out the GitHub repo &rarr;</a>
+<a class="cta" href="https://github.com/jdc0589/mite-node">Check out the GitHub repo &rarr;</a>
 
 <hr>
 
@@ -47,25 +46,28 @@
   <li>Developers know and have tools for SQL.</li>
   <li>Down migrations are required for expected behavior on conflict resolution.</li>
   <li>Order is significant in migrations and is enforced.</li>
-  <li>Migrations should be language agonostic. So a utility is appropriate.</li>
+  <li>Migrations should be developemnt stack + language agonostic</li>
   <li>Database consistency with the migrations should be enforced. We should be aware of altered migrations.</li>
 </ul>
 
 <hr>
 
 <h2 id="installation">Installation</h3>
-<ol>
-  <li><a href="#">Download the distributable</a> or build from source.</li>
-  <li>Add the location of Mite.exe to your PATH variable.</li>
-</ol>
+<kbd>npm install --global mite</kbd>
 
 <hr>
 
 <h2 id="getting-started">Getting Started</h2>
 
 <h3 id="new-project">For new projects: </h3>
-<p>It's best to have your migrations stay in their own folder, so create one for them: <kbd>mkdir migrations</kbd> (then <kbd>cd</kbd> into that folder).</p>
-<p>Run <kbd>mite init</kbd> within this directory.  This will take you through a short wizard and spit out a config file that looks something like this:</p>
+<p>
+  Create a database for your project (if it doesn't exist),
+  and make sure you have credentials for a user with access to it.
+  If you ever want to make use of <kbd>mite audit</kbd> this user needs permission to create/delete databases as well (we promise it will only deal with tmp databases).
+</p>
+<p><kbd>cd</kbd> in to the root directory of your project</p>
+
+<p>Run <kbd>mite init</kbd>. This will take you through a short wizard and spit out a config file that looks something like this:</p>
 <pre>
   {
     "database": "mitedevel",
@@ -80,11 +82,10 @@
 <p>Got it? Proceed to <a href="#first-migration">writing your first migration</a>.</p>
 
 
-<h3 id="existing-project">For existing projects:</h3>
-<p>Same steps as above. No, really.</p>
-
-<h3 id="powering-up">Powering up an existing Mite project: </h3>
-<p>Make sure that you have an empty database created and are in your scripts directory. Then run <kbd>mite update</kbd> and you're good to go.</p>
+<h3 id="existing-project">For existing mite projects:</h3>
+<p>Same steps as above. No, really.
+<kbd>mite init</kbd> won't overwrite the <kbd>migrations</kbd> directory if it already exists,
+nor will it mess with your database if the <kbd>_migrations</kbd> table is already present.</p>
 
 <hr>
 
@@ -92,25 +93,22 @@
 <p>Migrations with Mite are literally just SQL (well, with some comments).</p>
 
 <pre>
-  /* up */
-  CREATE TABLE dbo.test
-    (
-    id int NOT NULL
-    )  ON [PRIMARY]
-  GO
-  /* down */
-  drop table dbo.test
+  /* mite:up */
+  CREATE TABLE `test` (
+    id int primary key
+  );
+
+  /* mite:down */
+  drop table `test`;
 </pre>
 
-<p>Running <kbd>mite -c</kbd> will create a template for you. Just fill it in with, yknow, SQL.</p>
-
-<p>Full documentation is available <a href="https://github.com/soitgoes/mite">on GitHub</a>.</p>
+<p>Running <kbd>mite create</kbd> will create a template for you. Just fill it in with, you know, SQL.</p>
 
 <hr>
 
 <h2 id="license">The MIT License</h2>
 <div class="license">
-<p>Copyright &copy; 2011 Whiteboard-IT LLC</p>
+<p>Copyright &copy; 2014 Davis Clark</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
@@ -123,13 +121,13 @@
 
   <div class="footer">
     <div class="copy">
-      <p>Copyright &copy; 2011 Whiteboard-IT LLC</p>
+      <p>Copyright &copy; 2014 Davis Clark</p>
     </div>
   </div>
-  
+
   <script src="js/build.js"></script>
 
-  <a href="https://github.com/nrstott/bogart"><img style="position: fixed; top: 0; right: 0; border: 0;" src="img/forkme.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+  <a href="https://github.com/jdc0589/mite-node"><img style="position: fixed; top: 0; right: 0; border: 0;" src="img/forkme.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
   <!-- Dev mode scripts (unminified) -->
   <!-- <script src="js/components.js"></script>
