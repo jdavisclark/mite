@@ -102,6 +102,9 @@ To run the unit tests, make sure all dependencies are up to date via `npm instal
 # Contributing
 Pull requests are always welcome; just try and open an issue about the feature/change you are making first so we have a chance to briefly discuss it. If you are making changes to the backend (lib/mite.js) or the migration provider, make to add tests.
 
+### development branching
+any new features need to be developed in a feature branch created from the `develop` branch. You should not make any changes to master, or create branches from master unless its a hotfix or something simple like a documentation update.
+
 ### setting up a dev environment
 1. fork this repo
 2. clone your fork locally
