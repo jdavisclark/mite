@@ -2,10 +2,6 @@
 	"migrationFolderName": "migrations",
 	"migrationExtension": ".sql",
 	"host": "localhost",
-	"diff": {
-		"cmd": "diff",
-		"args": ["-C", "5", "{proper}", "{current}"]
-	},
 	"open": {
 		"osx": {
 			"cmd": "open",
