@@ -60,6 +60,8 @@ mite uses a lot of `git` style commands and subcommands. You can execute mite co
 
 **stepdown** - run the down of the last executed migration. This is destructive and should never be run in a production environment.
 
+**compare** - list the current disk has + the tracked hash of all migrations
+
 **help** - print usage information
 
 **help [command]** - print usage information for a specific command
