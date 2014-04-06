@@ -1,7 +1,7 @@
 select
-	*
+	`key`,
+	`hash`
 from
 	_migration
 where
-	(:submodule is null and submodule is null)
-	or (submodule = :submodule);
+	`submodule` = :submodule
