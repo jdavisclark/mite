@@ -33,7 +33,7 @@ MockMigrationRepository.prototype.all = function(submodule) {
 	return def.promise;
 };
 
-MockMigrationRepository.prototype.createMigrationTable = function() {
+MockMigrationRepository.prototype.initMigrationStorage = function() {
 	var def = q.defer(),
 		self = this;
 
