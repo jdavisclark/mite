@@ -128,7 +128,16 @@ now `status` produces:
 
 ![clean status](http://i.imgur.com/ZyfY59f.png)
 
-thats it. submodules inherit all settings from the `.mite` config of your main project. submodules need migrations + a `.mite` file, but it can be empty right now. the other mite commands work on submodules too. 
+thats it. submodules inherit all settings from the `.mite` config of your main project. submodules need migrations + a `.mite` file, but it can be empty right now. the other mite commands work on submodules too.
+
+
+### Ignore Paths
+
+There is a chance you might have some sort of example directory in your projects that has a `.mite` config, but should not be detected as a submodule. `.mite` config files support an `ignorePaths` array property to handle this.   The ignore paths are [minimatch style](https://github.com/isaacs/minimatch), and are tested against a mite project relative path (no leading or trailing path seperators).
+
+Examples:
+1. to ignore a single "example" directory in your mite project root: `ignorePaths: [ "example" ]`
+2. to ignore any "example" directory in the project: `ignorePaths: [ "**/example" ]`
 
 
 ## Running Tests
