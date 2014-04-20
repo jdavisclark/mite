@@ -10,7 +10,7 @@
 		"windows": {},
 		"linux": {}
 	},
-	"submodules": true,
+	"submodules": "context",
 	"reportSubmoduleSummaryStatus": true,
 	"name": "."
 }
