@@ -12,5 +12,6 @@
 	},
 	"submodules": "context",
 	"reportSubmoduleSummaryStatus": true,
+	"ignorePaths": [],
 	"name": "."
 }
