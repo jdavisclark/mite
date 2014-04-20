@@ -1,8 +1,15 @@
 require("jasmine-node-promises")();
 
 var Mite = require("../../lib/mite"),
+	Migration = require("../../lib/migration"),
 	config = require("../fixtures/mite.config.json"),
 	MockRepo = require("../fixtures/mockMigrationRepository");
+
+function createMigrations (bases) {
+	return bases.map(function(data) {
+		return new Migration(data);
+	});
+}
 
 describe("up from uninitialized state", function () {
 	var mite;
@@ -32,10 +39,10 @@ describe("up from clean state", function () {
 		migrations;
 
 	beforeEach(function () {
-		migrations = [{
+		migrations = createMigrations([{
 			key: "1.sql",
 			hash: "lrzmBZxrYf8cKZiBa3UrLj4NyCbZLxxX4uhWWbUc"
-		}];
+		}]);
 
 		mite = new Mite(config, new MockRepo({
 			tableExists: true,
@@ -57,16 +64,16 @@ describe("up from dirty state", function () {
 	beforeEach(function (done) {
 		var mite = new Mite(config, new MockRepo({
 			tableExists: true,
-			migrations: [{
+			migrations: createMigrations([{
 				key: "1.sql",
 				hash: "5wWaOhJ1pM7yE31XKSf8MBuzAAn8kTcnRzrNWm2G"
-			}]
+			}])
 		}));
 
-		var diskMigrations = [{
+		var diskMigrations = createMigrations([{
 			key: "1.sql",
 			hash: "7i2G3GbyGNTxs78FVDrZrI1D019wV4DUBb0ZZUY0"
-		}];
+		}]);
 
 		mite.up(diskMigrations).then(function (status) {
 			upStatus = status;
@@ -91,10 +98,10 @@ describe("up from unexecuted + empty state", function() {
 	var status,
 		mockRepo,
 		mite,
-		diskMigrations = [
+		diskMigrations = createMigrations([
 			{key:"1.sql", hash:"rLr8Wqr1bCwr1TDXBl611mCc7G8wlcSGlCCPhJzQ", sql: "create table firstMigration;"},
 			{key: "2.sql", hash:"YwPhNPnsPQ8JPpYrBcbrBmH93CN9JxHwEspM2bG7", sql: "create table secondMigration;"}
-		];
+		]);
 
 	beforeEach(function(done) {
 		status = undefined;
@@ -136,14 +143,14 @@ describe("up from unexecuted state with existing executed migrations", function(
 		dbMigrations;
 
 	beforeEach(function(done) {
-		diskMigrations = [
+		diskMigrations = createMigrations([
 			{key:"1.sql", hash: "c51VLU6JCmXht8rEQLflLFO39H4PaTUaW746yTdG", up: "stuff"},
 			{key:"2.sql", hash: "OzwDuFRpx3uhAakteLTXw4rUNV9Cr9PNIngLL69x", up: "more stuff"}
-		];
+		]);
 
-		dbMigrations = [
+		dbMigrations = createMigrations([
 			{key:"1.sql", hash: "c51VLU6JCmXht8rEQLflLFO39H4PaTUaW746yTdG"},
-		];
+		]);
 
 		status = undefined;
 

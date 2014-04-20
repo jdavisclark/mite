@@ -1,6 +1,6 @@
 {
   "name": "mite",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "SQL schema migrations so easy you already know how to write them. guaranteed.",
   "keywords": [
     "sql",
@@ -36,10 +36,9 @@
     "mysql": "~2.0.1",
     "q": "~1.0.0",
     "colors": "~0.6.2",
-    "rimraf": "~2.2.6",
-    "fs.extra": "~1.2.1",
     "underscore": "~1.6.0",
-    "diff": "~1.0.8"
+    "diff": "~1.0.8",
+    "minimatch": "^0.2.14"
   },
   "devDependencies": {
     "jasmine-node": "~1.13.1",
@@ -47,7 +46,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "mite": "./lib/cli/index.js"
+    "mite": "./lib/global.js"
   },
   "scripts": {
     "test": "./node_modules/.bin/jasmine-node tests/"

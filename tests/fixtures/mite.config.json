@@ -3,6 +3,5 @@
   "user": "mite",
   "password": "mite",
   "dialect": "mysql",
-  "port": 3306,
-  "migration_home": "mite_test_home/"
+  "port": 3306
 }
