@@ -149,6 +149,52 @@ describe("status from a dirty state", function() {
 });
 
 
+describe("status with missing disk migrations", function() {
+	var status;
+
+	var diskMigrations = createMigrations([
+		{ key: "1.sql", hash: "nvA3aw59USZkL86ILtydgGy246djZInyhxGEoRGa" },
+		{ key: "3.sql", hash: "8NtWMdh2lOAVQC9ZJNP1O9PydGJE8a4Def4HKwMZ" }
+	]);
+
+	var dbMigrations = createMigrations([
+		{ key: "1.sql", hash: "nvA3aw59USZkL86ILtydgGy246djZInyhxGEoRGa" },
+		{ key: "2.sql", hash: "tDyDfqx70s3ZCU6GqRHKH0zonOUBgKYZhzG7kjMn" },
+		{ key: "3.sql", hash: "8NtWMdh2lOAVQC9ZJNP1O9PydGJE8a4Def4HKwMZ" }
+	]);
+
+	beforeEach(function(done) {
+		var mite = new Mite(config, new MockRepo({
+			tableExists: true,
+			migrations: dbMigrations
+		}));
+
+		status = null;
+
+		mite.status(diskMigrations).then(function(mStatus) {
+			status = mStatus;
+			done();
+		});
+	});
+
+	it("should be dirty", function() {
+		expect(status.clean).toBe(false);
+	});
+
+	it("should have a single dirty migration", function() {
+		expect(status.dirtyMigrations.length).toBe(1);
+	});
+
+	it("should have the correct dirty migration", function() {
+		expect(status.dirtyMigrations[0]).toBe(dbMigrations[1].key);
+	});
+
+	it("should have no unexecuted migrations", function() {
+		expect(status.unexecutedMigrations).not.toBeDefined();
+	});
+});
+
+
 
 
 
