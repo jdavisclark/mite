@@ -1,1 +1,1 @@
-insert into _migration values (:key, :hash, :submodule, :up, :down);
+insert into _migration values (:key, :hash, :submodule);
