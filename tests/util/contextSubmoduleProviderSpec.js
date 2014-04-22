@@ -46,3 +46,22 @@ describe("mite root with multiple non-nested submodules", function() {
 		})).toBe(true);
 	});
 });
+
+describe("mite root with ignored submodules", function() {
+	var provider,
+		submodules;
+
+	beforeEach(function() {
+		provider = new ContextProvider();
+		submodules = provider.getSubmodules({
+			miteRoot: path.resolve(__dirname, "../fixtures/contextSubmoduleProviderFixtures", "ignorePaths"),
+			migrationFolderName: "migrations",
+			CONFIG_FILENAMES: [".mite", "mite.config"],
+			ignorePaths: ["**/"]
+		});
+	});
+
+	it("should have correct submodules", function() {
+		expect(submodules.length).toBe(0);
+	});
+});
