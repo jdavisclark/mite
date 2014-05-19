@@ -146,7 +146,10 @@ now `status` produces:
 
 ![clean status](http://i.imgur.com/ZyfY59f.png)
 
-thats it. submodules inherit all settings from the `.mite` config of your main project. submodules need migrations + a `.mite` file, but it can be empty right now. the other mite commands work on submodules too.
+thats it. submodules inherit all settings from the `.mite` config of your main project. submodules need migrations + a `.mite` file, but it can be empty, or include dependency + ignorePaths values. the other mite commands work on submodules too.
+
+#### helpful submodule tips
+The `mite submodules` commmand has options to output bare names (`-b --bare`) and to order the output based on dependencies (`-o --order [up || down]`). This gives you some flexibility to do things mite might not support yet.  e.g. `mite submodules --bare --order=down | xargs -I {} -- mite --submodule={} down --confirm`
 
 
 ### Ignore Paths
