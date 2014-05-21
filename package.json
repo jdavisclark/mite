@@ -1,6 +1,6 @@
 {
   "name": "mite",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "SQL schema migrations so easy you already know how to write them. guaranteed.",
   "keywords": [
     "sql",
@@ -32,13 +32,14 @@
     "tests": "./tests"
   },
   "dependencies": {
+    "colors": "~0.6.2",
     "commander": "~2.1.0",
+    "dependency-graph": "^0.1.0",
+    "diff": "~1.0.8",
+    "minimatch": "^0.2.14",
     "mysql": "~2.0.1",
     "q": "~1.0.0",
-    "colors": "~0.6.2",
-    "underscore": "~1.6.0",
-    "diff": "~1.0.8",
-    "minimatch": "^0.2.14"
+    "underscore": "~1.6.0"
   },
   "devDependencies": {
     "jasmine-node": "~1.13.1",
