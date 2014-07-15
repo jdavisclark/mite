@@ -37,8 +37,10 @@
     "dependency-graph": "^0.1.0",
     "diff": "~1.0.8",
     "minimatch": "^0.2.14",
+    "mssql": "^1.1.0",
     "mysql": "~2.0.1",
     "q": "~1.0.0",
+    "tedious": "^1.1.0",
     "underscore": "~1.6.0"
   },
   "devDependencies": {

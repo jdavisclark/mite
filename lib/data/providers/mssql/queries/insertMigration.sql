@@ -1,0 +1,1 @@
+insert into _migration ([key], [hash], [submodule]) values (@key, @hash, @submodule);
