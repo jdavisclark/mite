@@ -8,6 +8,7 @@ Mite is a sql schema migration utility. It lets you define schema migrations in 
 #### supported databases
 
 - MySQL
+- Microsoft Sql Server (no 'audit' support yet)
 
 ### Installation
 
