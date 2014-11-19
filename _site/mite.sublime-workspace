@@ -1,0 +1,2049 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"d",
+				"database"
+			],
+			[
+				"drop",
+				"dropQuery"
+			],
+			[
+				"pr",
+				"prototype"
+			],
+			[
+				"SUbtr",
+				"SubmoduleTree"
+			],
+			[
+				"subo",
+				"SubmoduleTree"
+			],
+			[
+				"smo",
+				"submodule"
+			],
+			[
+				"su",
+				"submodule"
+			],
+			[
+				"Sub",
+				"SubmoduleTree"
+			],
+			[
+				"ga",
+				"gaCode"
+			],
+			[
+				"lib",
+				"libs"
+			],
+			[
+				"sel",
+				"selected"
+			],
+			[
+				"de",
+				"Description"
+			],
+			[
+				"get",
+				"getModelForDealerConfig"
+			],
+			[
+				"dconfi",
+				"dealerConfig"
+			],
+			[
+				"select",
+				"selectable"
+			],
+			[
+				"cans",
+				"canSelectMultiple"
+			],
+			[
+				"canSelect",
+				"canSelectSimple"
+			],
+			[
+				"can",
+				"canSelect"
+			],
+			[
+				"access",
+				"accessories"
+			],
+			[
+				"_co",
+				"_codeEqual"
+			],
+			[
+				"_",
+				"_codeEqual"
+			],
+			[
+				"oof",
+				"oneOfDependencies"
+			],
+			[
+				"awoo",
+				"accessoriesWithOneOfDependency"
+			],
+			[
+				"accyco",
+				"accyCode"
+			],
+			[
+				"_getco",
+				"_getCodeProperty"
+			],
+			[
+				"_g",
+				"_getCodeProperty"
+			],
+			[
+				"tar",
+				"TargetCode"
+			],
+			[
+				"dep",
+				"dependents"
+			],
+			[
+				"oneO",
+				"oneOfDeps"
+			],
+			[
+				"ty",
+				"typeof"
+			],
+			[
+				"csel",
+				"codeSelector"
+			],
+			[
+				"Acco",
+				"AccessoryCode"
+			],
+			[
+				"cod",
+				"codes"
+			],
+			[
+				"info",
+				"infoContext"
+			],
+			[
+				"pare",
+				"parentCode"
+			],
+			[
+				"dcon",
+				"dealerConfiguration"
+			],
+			[
+				"Aco",
+				"AccessoryCode"
+			],
+			[
+				"ta",
+				"targetMissingAccessories"
+			],
+			[
+				"src",
+				"source"
+			],
+			[
+				"fiaM",
+				"fiaMeta"
+			],
+			[
+				"targ",
+				"targets"
+			],
+			[
+				"fiam",
+				"fiaMap"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"up",
+				"updateRequiredState"
+			],
+			[
+				"upda",
+				"updateConflictsState"
+			],
+			[
+				"ac",
+				"AccessoryDescription"
+			],
+			[
+				"intC",
+				"intColor"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"imm",
+				"interiorMixMap"
+			],
+			[
+				"di",
+				"dirty"
+			],
+			[
+				"ma",
+				"exteriorMixMap"
+			],
+			[
+				"dir",
+				"dirtyChildren"
+			],
+			[
+				"chil",
+				"ChildConfigurations"
+			],
+			[
+				"exterior",
+				"ExteriorColors"
+			],
+			[
+				"ar",
+				"argStr"
+			],
+			[
+				"audi",
+				"auditConfig"
+			],
+			[
+				"config",
+				"configFile"
+			],
+			[
+				"pair",
+				"pairs"
+			],
+			[
+				"dirty",
+				"dirtyMigrations"
+			],
+			[
+				"dbmi",
+				"dbMigrations"
+			],
+			[
+				"met",
+				"dealerConfigMeta"
+			],
+			[
+				"has",
+				"hasAllSourceAccessories"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"inf",
+				"targetInfoArea"
+			],
+			[
+				"dealer",
+				"dealer-configuration-targets"
+			],
+			[
+				"copy",
+				"copyAccessoriesModal"
+			],
+			[
+				"cop",
+				"copyAccessoriesModal"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"is",
+				"isSource"
+			],
+			[
+				"dea",
+				"dealerConfigsMap"
+			],
+			[
+				"mo",
+				"modal"
+			],
+			[
+				"surl",
+				"seriesUrlName"
+			],
+			[
+				"tac",
+				"targetAccys"
+			],
+			[
+				"ret",
+				"reAccyTrim"
+			],
+			[
+				"obs",
+				"observableArray"
+			],
+			[
+				"filte",
+				"filterFias"
+			],
+			[
+				"mcon",
+				"mainContent"
+			],
+			[
+				"main",
+				"mainHeight"
+			],
+			[
+				"fr",
+				"frameHeight"
+			],
+			[
+				"backc",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"mmi",
+				"ModelMix"
+			],
+			[
+				"selco",
+				"selectedCodes"
+			],
+			[
+				"oneOf",
+				"oneOfDependencies"
+			],
+			[
+				"goo",
+				"getOneOfDependencies"
+			],
+			[
+				"fiami",
+				"FiaMixes"
+			],
+			[
+				"exco",
+				"ExteriorColors"
+			],
+			[
+				"obser",
+				"observable"
+			],
+			[
+				"mim",
+				"ModelMix"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"accesories",
+				"accessories"
+			],
+			[
+				"ob",
+				"observable"
+			],
+			[
+				"Accyco",
+				"AccessoryCode"
+			],
+			[
+				"are",
+				"AccessoryRuleEngine"
+			],
+			[
+				"req",
+				"requirements"
+			],
+			[
+				"accode",
+				"AccessoryCode"
+			],
+			[
+				"acc",
+				"accessoriesWithRequirements"
+			],
+			[
+				"depen",
+				"dependency"
+			],
+			[
+				"rule",
+				"ruleEngine"
+			],
+			[
+				"observableA",
+				"observableArray"
+			],
+			[
+				"no",
+				"needsOneOf"
+			],
+			[
+				"dis",
+				"disabledBy"
+			],
+			[
+				"che",
+				"checkDependencies"
+			],
+			[
+				"accco",
+				"AccessoryCode"
+			],
+			[
+				"par",
+				"parentAccessories"
+			],
+			[
+				"Acc",
+				"AccessoryCode"
+			],
+			[
+				"ini",
+				"initDepencencyState"
+			],
+			[
+				"rul",
+				"rulesByType"
+			],
+			[
+				"rules",
+				"rulesByType"
+			],
+			[
+				"map",
+				"accessoryCodeMap"
+			],
+			[
+				"tru",
+				"targetRules"
+			],
+			[
+				"acode",
+				"AccessoryCode"
+			],
+			[
+				"rulb",
+				"rulesByAccessoryCode"
+			],
+			[
+				"aco",
+				"AccessoryCode"
+			],
+			[
+				"add",
+				"addAccessory"
+			],
+			[
+				"proto",
+				"proto	Prototype"
+			],
+			[
+				"ru",
+				"rulesByType"
+			],
+			[
+				"tmi",
+				"targetMix"
+			],
+			[
+				"ex",
+				"exterior-color-percentage"
+			],
+			[
+				"mite",
+				"mite_tmp"
+			],
+			[
+				"subm",
+				"subMigrations"
+			],
+			[
+				"migration",
+				"migrationRoot"
+			],
+			[
+				"e",
+				"executable"
+			],
+			[
+				"node",
+				"node_modules"
+			],
+			[
+				"lo",
+				"localBin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lib/mite.js",
+			"settings":
+			{
+				"buffer_size": 9592,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/cli/up.js",
+			"settings":
+			{
+				"buffer_size": 2892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/davis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/cli/compare.js",
+			"settings":
+			{
+				"buffer_size": 1813,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 184.0,
+		"selected_items":
+		[
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"syn sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wreap",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"camel",
+				"Convert Case: camelCase"
+			],
+			[
+				"came",
+				"Convert Case: camelCase"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"dash",
+				"Convert Case: dash-case"
+			],
+			[
+				"refre",
+				"Project: Refresh Folders"
+			],
+			[
+				"syn js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ref",
+				"Project: Refresh Folders"
+			],
+			[
+				"err",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"lint",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"refresh",
+				"Project: Refresh Folders"
+			],
+			[
+				"asp",
+				"Set Syntax: ASP"
+			],
+			[
+				"refres",
+				"Project: Refresh Folders"
+			],
+			[
+				"synjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syn json",
+				"Set Syntax: JSON"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"syn ",
+				"Set Syntax: HTML"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pas",
+				"Convert Case: PascalCase"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"cl",
+				"File: Close All"
+			],
+			[
+				"syn mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"close",
+				"File: Close All"
+			],
+			[
+				"rever",
+				"File: Revert"
+			],
+			[
+				"setting",
+				"Preferences: Settings - Default"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"syn han",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"syn less",
+				"Set Syntax: LESS"
+			],
+			[
+				"view",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"syn ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"keybin",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"key ",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"default",
+				"Preferences: Settings - Default"
+			],
+			[
+				"hint",
+				"JSHint"
+			],
+			[
+				"settin",
+				"Preferences: Settings - Default"
+			],
+			[
+				"cam",
+				"Convert Case: camelCase"
+			],
+			[
+				"git",
+				"Set Syntax: Git Graph"
+			],
+			[
+				"save as",
+				"Project: Save As"
+			],
+			[
+				"syn html",
+				"Set Syntax: HTML"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"plugin",
+				"JSHint: Set Plugin Options"
+			],
+			[
+				"h int",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"hin",
+				"JSHint"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"isntall c",
+				"Package Control: Install Package"
+			],
+			[
+				"lin",
+				"Sort Lines"
+			],
+			[
+				"jshint",
+				"JSHint"
+			],
+			[
+				"add re",
+				"Package Control: Add Repository"
+			],
+			[
+				"hi",
+				"JSHint"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"syn jne",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"syn javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"intall ",
+				"Package Control: Install Package"
+			],
+			[
+				"snake",
+				"Convert Case: snake_case"
+			],
+			[
+				"syn sq",
+				"Set Syntax: SQL"
+			],
+			[
+				"saveal",
+				"File: Save All"
+			],
+			[
+				"ups",
+				"Emmet: Update Image Size"
+			],
+			[
+				"random",
+				"Generate Random Text"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"jasmi",
+				"Set Syntax: Jasmine"
+			],
+			[
+				"them",
+				"Themr: List themes"
+			],
+			[
+				"pasc",
+				"Convert Case: PascalCase"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"anony",
+				"Snippet: Anonymous Function"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"revere",
+				"Permute Lines: Reverse"
+			],
+			[
+				"reint",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syn ra",
+				"Set Syntax: Razor"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 301.0,
+		"history":
+		[
+			".clear",
+			".",
+			"clear",
+			"ls",
+			"import six",
+			"import os",
+			"view.path",
+			"isinstance({}, dict)",
+			"dict",
+			"Dictionary",
+			"hasattr",
+			"isinstance(sublime.Settings(33243), sublime.Settings)",
+			"instanceof",
+			"a.keys()",
+			"a.key()",
+			"a = {\"asd\":1}",
+			"a = {asd:1}",
+			"a[\"asd\"]",
+			"a.asd",
+			"a[\"asd\"] = \"foooo\"",
+			"a.asd = \"a\"",
+			"a.asd",
+			"a = {}",
+			"JsFormat",
+			"plugin",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").get(\"\")",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").get()",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").get(",
+			"len(sublime.load_settings(\"JsFormat.sublime-settings\"))",
+			"dir(sublime.load_settings(\"JsFormat.sublime-settings\"))",
+			"sublime.load_settings(\"JsFormat.sublime-settings\")",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").__dir__()",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").__dir__",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").__dict__",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").dumps",
+			"sublime.load_settings(\"JsFormat.sublime-settings\").dump",
+			"dir(sublime.load_settings(\"JsFormat.sublime-settings\"))",
+			"sublime.load_settings(\"JsFormat.sublime-settings\")",
+			"s",
+			"sublime.Settings(\"\").get(\"asd\")",
+			"sublime.Settings(1).get(\"asd\")",
+			"sublime.Settings(1)",
+			"sublime.Settings()",
+			"sublime.Settings",
+			"Settings",
+			"view.settings().get(\"JsFormat\") is None",
+			"view.settings().get(\"JsFormat\")",
+			"view.settings().get(\"JsFormat\", None)",
+			"view.settings().get(\"JsFormat\")",
+			"view.settings.get(\"JsFormat\")",
+			"view.settings().get(\"JsFormat\")",
+			"view.settings()",
+			"view.settings(\"JsFormat\")",
+			"view.settings()",
+			"len(\"?*VxFp7gR./PdW7z>_Hc3h9:DZ?kh^>o\")",
+			"\"?*VxFp7gR./PdW7z>_Hc3h9:DZ?kh^>o\".length",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": true,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/davis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/davis/working/mite/node_modules/mysql/lib/protocol/packets/ComPingPacket.js",
+		"/Users/davis/working/mite/lib/cli/compare.js",
+		"/Users/davis/working/mite/lib/submoduleProviders/contextProvider.js",
+		"/Users/davis/tmp/modelcodes.csv",
+		"/Users/davis/Documents/accessory-media.sql",
+		"/Users/davis/working/migrations/1.log_series.sql",
+		"/Users/davis/working/search-stored-procs.sql",
+		"/Users/davis/Documents/target-mix-crs.txt",
+		"/Users/davis/working/mite/lib/data/providers/mysql/provider.js",
+		"/Users/davis/working/mite/lib/mite.js",
+		"/Users/davis/working/mite/mite.example",
+		"/Users/davis/working/mite/mite.sublime-project",
+		"/Users/davis/working/mite/lib/data/providers/mssql/provider.js",
+		"/Users/davis/working/mite/lib/cli/index.js",
+		"/Users/davis/working/mite/lib/cli/up.js",
+		"/Users/davis/working/mite/node_modules/chalk/node_modules/strip-ansi/cli.js",
+		"/Users/davis/working/mite/lib/cli/status.js",
+		"/Users/davis/working/mite-test/migrations/2014-07-15T02-05-00Z.sql",
+		"/Users/davis/working/mite/lib/cli/init.js",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/getMigrationTable.sql",
+		"/Users/davis/working/mite/node_modules/mysql/package.json",
+		"/Users/davis/working/mite/node_modules/mysql/lib/protocol/SqlString.js",
+		"/Users/davis/working/mite/node_modules/mysql/node_modules/require-all/test/mydir/sub/yes.js",
+		"/Users/davis/working/mite/node_modules/chalk/node_modules/.bin/strip-ansi",
+		"/Users/davis/working/mite/tests/backend/stepToSpec.js",
+		"/Users/davis/working/mite/lib/submoduleTree.js",
+		"/Users/davis/working/mite-test/migrations/2014-05-21T00-30-08Z.sql",
+		"/Users/davis/working/mite/node_modules/mysql/tool/generate-error-constants.js",
+		"/Users/davis/working/mite/lib/global.js",
+		"/Users/davis/working/mite/node_modules/tedious/lib/message-io.js",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/createMigrationsTable.sql",
+		"/Users/davis/working/mite/lib/data/providers/mysql/queries/createMigrationsTable.sql",
+		"/Users/davis/working/mite/lib/cli/create.js",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/dropDatabaseIfExists.sql",
+		"/Users/davis/working/mite/lib/promiseUtil.js",
+		"/Users/davis/working/mite/node_modules/jasmine-node/node_modules/gaze/node_modules/fileset/node_modules/glob/test/pause-resume.js",
+		"/Users/davis/working/mite/package.json",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/insertMigration.sql",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/deleteMigration.sql",
+		"/Users/davis/working/mite/lib/data/providers/mssql/queries/allMigrations.sql",
+		"/Users/davis/Downloads/JMF_EXT_COLOR_TGT_MIX_Pilot_Dealers.csv",
+		"/Users/davis/working/mite/lib/cli/reporter.js",
+		"/Users/davis/working/mite/lib/cli/down.js",
+		"/Users/davis/working/mite/tests/backend/upSpec.js",
+		"/Users/davis/working/mite/node_modules/jasmine-node/lib/jasmine-node/cli.js",
+		"/Users/davis/working/mite/defaults.json",
+		"/Users/davis/working/mite/lib/cli/submodules.js",
+		"/Users/davis/working/mite/tests/util/submoduleTreeSpec.js",
+		"/Users/davis/working/mite/lib/requireExtensions.js",
+		"/Users/davis/working/mite/README.md",
+		"/Users/davis/working/mite/lib/cli/stepUp.js",
+		"/Users/davis/working/mite/node_modules/mysql/lib/protocol/packets/UseOldPasswordPacket.js",
+		"/Users/davis/working/mite/lib/cli/util.js",
+		"/Users/davis/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/davis/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/davis/working/mite/node_modules/mysql/lib/protocol/packets/EmptyPacket.js",
+		"/Users/davis/working/mite/node_modules/mysql/Makefile",
+		"/Users/davis/working/mite/node_modules/q/CONTRIBUTING.md",
+		"/Users/davis/working/mite/node_modules/mysql/lib/protocol/packets/ClientAuthenticationPacket.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/modelMix.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/config.js",
+		"/Volumes/C/working/SetAllocationManagement/DataImport/DataImport.csproj",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/interiorColorMix.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Objects/ColorMixes/InteriorColorMix.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Reporting/SetAllocationManagement.Reporting.csproj",
+		"/Volumes/C/working/SetAllocationManagement/packages/repositories.config",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Web.Release.config",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/TargetMix/Partial/ModelMix.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/model.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Reporting/ConfigService.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Controllers/TargetMixController.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Content/copy-accessories.css",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/fiaMix.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/dealerConfigurationMix.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/colorMix.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/Error/AuthorizationFailure.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/bin/DotNetOpenAuth.AspNet.xml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/bin/Org.Mentalis.Security.Cryptography.xml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/views/targetMixView.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Content/target-mix.css",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Objects/ModelConfigurationMix/DealerFiaMix.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Objects/Dealer/DealerExtended.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Models/ViewModels/DealerConfigurationViewModel.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/obj/Debug/SetAllocationManagement.Data.csproj.FileListAbsolute.txt",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/JbPdbInfo/dd3a6fc97de0b30c9f0166a5e00042e57e6de308",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/TargetMix/Partial/DealerConfiguration.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/le.min.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Data/Dealer/DealerContextQuery.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/Shared/_Layout.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Content/accessory-modal.css",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/XmlIndex/mscorlib.Nullness.Manual.xml/A029C282.bin",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Controllers/BaseController.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Controllers/BaseApiController.cs",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/JbPdbInfo/b9cc57745754e4e79dfae214a8641122a674877f",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Managers/Dealer/DealerManager.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Objects/ModelAccessories/ModelAccessory.cs",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/XmlIndex/System.Web.DynamicData.4.0.0.0.Nullness.Generated.xml/EB87AD13.bin",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/JbPdbInfo/e7c5ac76e4dbac37424ca5295357b03f316f62b6",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/accessory.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Objects/ModelConfigurationMix/DealerConfigurationSearchCriteria.cs",
+		"/Users/davis/Downloads/errors-qa_2014-05-13_170655_2014-05-14_170655.json",
+		"/Users/davis/Downloads/errors-uat_2014-05-14_161150_2014-05-14_163150.json",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/lib/jquery.validate.min.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Content/Styles/base/minified/jquery.ui.resizable.min.css",
+		"/Volumes/C/working/SetAllocationManagement/packages/Glimpse.Mvc4.1.5.3/Glimpse.Mvc4.1.5.3.nupkg",
+		"/Volumes/C/working/SetAllocationManagement/packages/EPPlus.3.1.3.3/lib/net35/EPPlus.XML",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Extensions/ModelExtensions.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/Home/Index.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/README.md",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Web.UAT.config",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/TargetMix/Index.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/Data/ModelColorMixes/GetInteriorColorMixesQuery.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/SetAllocationManagement.Web.csproj",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/bin/Ninject.Web.Common.xml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Web.config",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/models/interiorColor.js",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Views/TargetMix/Partial/ColorMix.cshtml",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Controllers/api/ModelMixesController.cs",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules/dirty.js",
+		"/Volumes/C/working/SetAllocationManagement/packages/DotNetOpenAuth.OpenId.Core.4.3.4.13329/lib/net35-full/Org.Mentalis.Security.Cryptography.xml",
+		"/Volumes/C/working/SetAllocationManagement/packages/DotNetOpenAuth.OpenId.Core.4.3.4.13329/DotNetOpenAuth.OpenId.Core.4.3.4.13329.nupkg",
+		"/Volumes/C/working/SetAllocationManagement/_ReSharper.SetAllocationManagement/PersistenIdIndex.bin",
+		"/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Data/packages.config",
+		"/Users/davis/working/JsFormat/libs/jsbeautifier/jsbeautifier/unpackers/tests/test-packer-non62-input.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 91.0,
+		"where_history":
+		[
+			"<open folders>,*.js,-node_modules/*",
+			"<open folders>,*.js",
+			"<open folders>,+*.js",
+			"<open folders>",
+			"/Users/davis/working/SetDpms",
+			",-*.xml,-packages/*,-_lib/*,,/Users/davis/working/SetDpms",
+			",-*.xml,-packages/*,-_lib/*,/Users/davis/working/SET_VLOC",
+			"<open folders>,-*.xml,-packages/*,-_lib/*",
+			"<open folders>,-*.xml,-packages/*",
+			"<open folders>,-*.xml",
+			"<open folders>",
+			"/Users/davis/working/SetDws",
+			"",
+			"-*/node_modules/*,/Volumes/C/working/SetAllocationManagement/SetAllocationManagement.Web/Scripts/modules",
+			"-*/node_modules/*, */Scripts/modules/",
+			"-*/node_modules/*, */Scripts/modules/*.js",
+			"-*/node_modules/*, *.js",
+			"-*/node_modules/*",
+			"-*/node_modules/*,/Users/davis/working/mite-node",
+			"-*/node_modules/*",
+			"-*/node_modules/*,/Users/davis/working/bogart",
+			"-*/node_modules/*,,/Users/davis/working/bogart",
+			"-*/node_modules/*",
+			"-/Users/davis/working/mite-node/node_modules",
+			"/Users/davis/working/mite-node/tests",
+			"/Users/davis/working/mite-node/node_modules/jasmine-node",
+			"/Users/davis/working/mite-node/node_modules/jasmine-node/lib",
+			"+node_modules/mysql",
+			"-node_modules/*",
+			"",
+			"/Volumes/C/working/SetDws/SetDws.Web/Views/",
+			"/Volumes/C/working/SetDws/SetDws.Web/Views/Shared/Series"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"notifier",
+			"dbMigrations",
+			"\\n",
+			"\\t",
+			"asdfasdfa",
+			"BatNextGen",
+			"Problem",
+			"report",
+			"`",
+			"sql",
+			"MsSqlMigrationRepository",
+			"config",
+			"MigrationRepository",
+			"\n	this.connection",
+			":",
+			"console.log",
+			"level",
+			"submo",
+			"option",
+			"self",
+			"backspace",
+			"throttle:",
+			"configMap",
+			"series",
+			"_id",
+			".cs",
+			"trace",
+			"Logger",
+			"init",
+			"_agentInfo",
+			"_trackEvent",
+			"iput",
+			"input",
+			"', ",
+			"input",
+			"space_in_empty",
+			"parent",
+			"footer",
+			"truncatedDescription",
+			".group-accessories",
+			".accessory-group",
+			"accessoryGroups",
+			"group",
+			"models",
+			"edit",
+			"x",
+			"text/html",
+			"roles",
+			"role",
+			"UserApiRouter",
+			"UserRouter",
+			"text",
+			"Invoice",
+			"category",
+			"package",
+			"audio",
+			"wheel",
+			"packages|Wheels|Audio",
+			"packages|Options|Wheels|Audio",
+			"\\\"packages\\\"|\"Options\"|\"Wheels\"|\"Audio\"",
+			"category|categories",
+			"group",
+			"category|categories",
+			"Category",
+			"monroney",
+			"\n			",
+			"category|categories",
+			"catagory",
+			"data",
+			"category",
+			"_initAccessory",
+			"_initRequiresOneOf",
+			"selectedCode",
+			"selectedCodes",
+			"_normalizeCode",
+			"initRequires",
+			"initRequiresOneOf",
+			"initRule",
+			"initAccessory",
+			"confliting",
+			"selectedCodes",
+			"_getCodeProperty",
+			"self",
+			"==",
+			"_codeEqual",
+			"D",
+			"==",
+			"code",
+			"==",
+			"Engine",
+			"AccessoryCode",
+			"codeSelector",
+			"AccessoryCode",
+			"accessories",
+			"accy",
+			"accessories",
+			"accy",
+			"accessories",
+			"canselect",
+			"RuleEngine",
+			"ruleEngine",
+			"validFiaTarget",
+			"fiaMeta",
+			"infoContext",
+			"selef",
+			"DealerAccessoriesList",
+			"concat",
+			"getConflicts",
+			"modelMeta",
+			"infoContext",
+			"visible",
+			"infoContext",
+			"font-size",
+			"inParent",
+			"Accessories()",
+			"accessories",
+			"Accessories",
+			"parentAccessories",
+			"prefix",
+			"at",
+			";\n",
+			"target",
+			"modelMeta",
+			"invalidAccessories",
+			"clientid",
+			"target",
+			"fiaMeta",
+			"targetMissingAccessories"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			",",
+			"test",
+			"asdfasdfa",
+			".accessories",
+			"\\t",
+			"    ",
+			"",
+			"    ",
+			"",
+			"\"",
+			"    ",
+			"'",
+			"    ",
+			"  ",
+			"&#0153;",
+			"&reg;",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lib/mite.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3681,
+								3681
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1340.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/cli/up.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2300,
+								2300
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 680.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/davis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/cli/compare.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1572,
+								1572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 821.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "mite.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"up",
+				"lib/cli/up.js"
+			],
+			[
+				"compare",
+				"lib/cli/compare.js"
+			],
+			[
+				"provider",
+				"lib/data/providers/mysql/provider.js"
+			],
+			[
+				"mite.js",
+				"lib/mite.js"
+			],
+			[
+				"cliind",
+				"lib/cli/index.js"
+			],
+			[
+				"mysqlpro",
+				"lib/data/providers/mysql/provider.js"
+			],
+			[
+				"status",
+				"lib/cli/status.js"
+			],
+			[
+				"getmigr",
+				"lib/data/providers/mssql/queries/getMigrationTable.sql"
+			],
+			[
+				"mite",
+				"lib/mite.js"
+			],
+			[
+				"init",
+				"lib/cli/init.js"
+			],
+			[
+				"createmi",
+				"lib/data/providers/mysql/queries/createMigrationsTable.sql"
+			],
+			[
+				"provider.js",
+				"lib/data/providers/mysql/provider.js"
+			],
+			[
+				"cliinde",
+				"lib/cli/index.js"
+			],
+			[
+				"repor",
+				"lib/cli/reporter.js"
+			],
+			[
+				"reporter",
+				"lib/cli/reporter.js"
+			],
+			[
+				"down",
+				"lib/cli/down.js"
+			],
+			[
+				"down.",
+				"lib/cli/down.js"
+			],
+			[
+				"inde",
+				"lib/cli/index.js"
+			],
+			[
+				"clisubmo",
+				"lib/cli/submodules.js"
+			],
+			[
+				"upsp",
+				"tests/backend/upSpec.js"
+			],
+			[
+				"conte",
+				"lib/submoduleProviders/contextProvider.js"
+			],
+			[
+				"util",
+				"lib/cli/util.js"
+			],
+			[
+				"cliup",
+				"lib/cli/up.js"
+			],
+			[
+				"import",
+				"DataImport/DataImport.csproj"
+			],
+			[
+				"report",
+				"SetAllocationManagement.Reporting/SetAllocationManagement.Reporting.csproj"
+			],
+			[
+				"modelmixjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/modelMix.js"
+			],
+			[
+				"config.js",
+				"SetAllocationManagement.Web/Scripts/modules/config.js"
+			],
+			[
+				"modelmi",
+				"SetAllocationManagement.Web/Scripts/modules/models/modelMix.js"
+			],
+			[
+				"onfig.js",
+				"SetAllocationManagement.Web/Scripts/modules/config.js"
+			],
+			[
+				"targetmicsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Index.cshtml"
+			],
+			[
+				"fiamijs",
+				"SetAllocationManagement.Web/Scripts/modules/models/fiaMix.js"
+			],
+			[
+				"dealerconjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/dealerConfigurationMix.js"
+			],
+			[
+				"dconview",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"dealerconfi",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/DealerConfiguration.cshtml"
+			],
+			[
+				"layout",
+				"SetAllocationManagement.Web/Views/Shared/_Layout.cshtml"
+			],
+			[
+				"accyfo",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"dealerconq",
+				"SetAllocationManagement.Data/Data/Dealer/DealerContextQuery.cs"
+			],
+			[
+				"basecon",
+				"SetAllocationManagement.Web/Controllers/BaseController.cs"
+			],
+			[
+				"le",
+				"SetAllocationManagement.Web/Scripts/le.min.js"
+			],
+			[
+				"ealerconmivi",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"dealercon",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"accyvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"acc",
+				"SetAllocationManagement.Web/Content/accessory-modal.css"
+			],
+			[
+				"accesscsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"modelaccjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/accessory.js"
+			],
+			[
+				"relea",
+				"SetAllocationManagement.Web/Web.Release.config"
+			],
+			[
+				"targetinde",
+				"SetAllocationManagement.Web/Views/TargetMix/Index.cshtml"
+			],
+			[
+				"target",
+				"SetAllocationManagement.Web/Scripts/modules/views/targetMixView.js"
+			],
+			[
+				"targetmi",
+				"SetAllocationManagement.Web/Views/TargetMix/Index.cshtml"
+			],
+			[
+				"web.cs",
+				"SetAllocationManagement.Web/SetAllocationManagement.Web.csproj"
+			],
+			[
+				"dealermijs",
+				"SetAllocationManagement.Web/Scripts/modules/models/dealerConfigurationMix.js"
+			],
+			[
+				"inter",
+				"SetAllocationManagement.Web/Scripts/modules/models/interiorColorMix.js"
+			],
+			[
+				"colormi",
+				"SetAllocationManagement.Web/Scripts/modules/models/colorMix.js"
+			],
+			[
+				"fiam",
+				"SetAllocationManagement.Web/Scripts/modules/models/fiaMix.js"
+			],
+			[
+				"fiami",
+				"SetAllocationManagement.Web/Scripts/modules/models/fiaMix.js"
+			],
+			[
+				"modelmix",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/ModelMix.cshtml"
+			],
+			[
+				"colorm",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/ColorMix.cshtml"
+			],
+			[
+				"dealercsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/DealerConfiguration.cshtml"
+			],
+			[
+				"js_f",
+				"js_formatter.py"
+			],
+			[
+				"js_",
+				"js_formatter.py"
+			],
+			[
+				"targtcs",
+				"SetAllocationManagement.Web/Content/target-mix.css"
+			],
+			[
+				"model",
+				"SetAllocationManagement.Web/Scripts/modules/models/model.js"
+			],
+			[
+				"exteriorcolorjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/exteriorColor.js"
+			],
+			[
+				"cmixcsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/ColorMix.cshtml"
+			],
+			[
+				"cmviewjs",
+				"SetAllocationManagement.Web/Scripts/modules/views/colorMixView.js"
+			],
+			[
+				"accessjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/accessory.js"
+			],
+			[
+				"accecsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"accessview",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"site.c",
+				"SetAllocationManagement.Web/Content/Site.css"
+			],
+			[
+				"ccesso",
+				"SetAllocationManagement.Web/Scripts/modules/models/accessory.js"
+			],
+			[
+				"accyview",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"accycshtml",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"accsview",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"accessoryform",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"colorcshtml",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/ColorMix.cshtml"
+			],
+			[
+				"mode.",
+				"SetAllocationManagement.Web/Scripts/modules/models/model.js"
+			],
+			[
+				"model.js",
+				"SetAllocationManagement.Web/Scripts/modules/models/model.js"
+			],
+			[
+				"formcsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"accfo",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"dealerview",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"authori",
+				"SetAllocationManagement.Web/Filters/AuthorizeDealerAttribute.cs"
+			],
+			[
+				"bogart",
+				"lib/bogart.js"
+			],
+			[
+				"accc",
+				"SetAllocationManagement.Web/Content/accessory-modal.css"
+			],
+			[
+				"accessofo",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"dataser",
+				"classes/DataService.cs"
+			],
+			[
+				"dealerviewd",
+				"classes/DealerViewData.cs"
+			],
+			[
+				"dealerviewcom",
+				"classes/DealerViewCommon.cs"
+			],
+			[
+				"customerview",
+				"customerView.aspx.cs"
+			],
+			[
+				"accessorycatego",
+				"Logic/Engine/Contracts/Objects/AccessoryCategory.cs"
+			],
+			[
+				"afview",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"serselinde",
+				"SetDws.Web/Views/SeriesSelection/Index.cshtml"
+			],
+			[
+				"oneof",
+				"tests/oneOfSpec.js"
+			],
+			[
+				"confl",
+				"tests/conflictsSpec.js"
+			],
+			[
+				"ruleen",
+				"SetAllocationManagement.Web/Scripts/modules/accessoryRuleEngine.js"
+			],
+			[
+				"editviewjs",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"engine",
+				"SetAllocationManagement.Web/Scripts/modules/accessoryRuleEngine.js"
+			],
+			[
+				"copy",
+				"SetAllocationManagement.Web/Content/copy-accessories.css"
+			],
+			[
+				"copycsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/CopyAccessory.cshtml"
+			],
+			[
+				"dconmixv",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"accview",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"accfov",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"tarmixin",
+				"SetAllocationManagement.Web/Views/TargetMix/Index.cshtml"
+			],
+			[
+				"modelmiv",
+				"SetAllocationManagement.Web/Scripts/modules/views/modelMixView.js"
+			],
+			[
+				"access",
+				"SetAllocationManagement.Web/Content/accessory-modal.css"
+			],
+			[
+				"accform",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"accviewjs",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			],
+			[
+				"accessoryq",
+				"SetAllocationManagement.Data/Data/ModelAccessories/GetModelAccessoriesQuery.cs"
+			],
+			[
+				"copyviewjs",
+				"SetAllocationManagement.Web/Scripts/modules/views/copyAccessoriesView.js"
+			],
+			[
+				"copyc",
+				"SetAllocationManagement.Web/Content/copy-accessories.css"
+			],
+			[
+				"rule",
+				"SetAllocationManagement.Web/Scripts/modules/accessoryRuleEngine.js"
+			],
+			[
+				"dconmijs",
+				"SetAllocationManagement.Web/Scripts/modules/models/dealerConfigurationMix.js"
+			],
+			[
+				"dealerjs",
+				"SetAllocationManagement.Web/Scripts/modules/models/dealerConfigurationMix.js"
+			],
+			[
+				"copyview",
+				"SetAllocationManagement.Web/Scripts/modules/views/copyAccessoriesView.js"
+			],
+			[
+				"delaerconvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"copyvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/copyAccessoriesView.js"
+			],
+			[
+				"delaerconmvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"dconmvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"fia",
+				"SetAllocationManagement.Web/Scripts/modules/models/fiaMix.js"
+			],
+			[
+				"dconviewjs",
+				"SetAllocationManagement.Web/Scripts/modules/views/dealerConfigurationMixView.js"
+			],
+			[
+				"dealerconview",
+				"SetAllocationManagement.Web/Models/ViewModels/DealerConfigurationViewModel.cs"
+			],
+			[
+				"we",
+				"SetAllocationManagement.Web/Web.config"
+			],
+			[
+				"web.c",
+				"SetAllocationManagement.Web/bin/Ninject.Web.Common.xml"
+			],
+			[
+				"accesso",
+				"SetAllocationManagement.Web/Scripts/modules/models/accessory.js"
+			],
+			[
+				"tarincsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Index.cshtml"
+			],
+			[
+				"web",
+				"SetAllocationManagement.Web/Web.config"
+			],
+			[
+				"acccsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/AccessoryForm.cshtml"
+			],
+			[
+				"modelmicsh",
+				"SetAllocationManagement.Web/Views/TargetMix/Partial/ModelMix.cshtml"
+			],
+			[
+				"accvi",
+				"SetAllocationManagement.Web/Scripts/modules/views/accessoryFormView.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
