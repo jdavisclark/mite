@@ -140,7 +140,7 @@ describe("status from a dirty state", function() {
 	});
 
 	it("should have the correct dirty migration name", function() {
-		expect(status.dirtyMigrations[0]).toBe("1.sql");
+		expect(status.dirtyMigrations[0].key).toBe("1.sql");
 	});
 
 	it("should have no unexecuted migrations", function() {
@@ -186,7 +186,7 @@ describe("status with missing disk migrations", function() {
 	});
 
 	it("should have the correct dirty migration", function() {
-		expect(status.dirtyMigrations[0]).toBe(dbMigrations[1].key);
+		expect(status.dirtyMigrations[0].key).toBe(dbMigrations[1].key);
 	});
 
 	it("should have no unexecuted migrations", function() {

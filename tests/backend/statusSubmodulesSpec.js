@@ -208,7 +208,7 @@ describe("status from a clean root state with dirty submodules", function() {
 	});
 
 	it("should have the correct dirty migration name", function() {
-		expect(status.dirtyMigrations[0]).toBe("1.sql");
+		expect(status.dirtyMigrations[0].key).toBe("1.sql");
 	});
 
 	it("should have no unexecuted migrations", function() {

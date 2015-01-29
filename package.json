@@ -1,6 +1,6 @@
 {
   "name": "mite",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "SQL schema migrations so easy you already know how to write them. guaranteed.",
   "keywords": [
     "sql",

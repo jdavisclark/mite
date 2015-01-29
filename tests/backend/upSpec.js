@@ -90,7 +90,7 @@ describe("up from dirty state", function () {
 	});
 
 	it("should have the correct dirty migration", function () {
-		expect(upStatus.dirtyMigrations[0]).toEqual("1.sql");
+		expect(upStatus.dirtyMigrations[0].key).toEqual("1.sql");
 	});
 });
 
