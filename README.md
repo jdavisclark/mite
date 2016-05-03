@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/jdc0589/mite-node.png?branch=master)](https://travis-ci.org/jdc0589/mite-node)
 
-Mite is a sql schema migration utility. It lets you define schema migrations in plain old sql and easy manipulate the migration state of your database. Since database migrations are defined in files within your project, you get all the benefits of source control to manage changes to your database schema.
+Mite is a sql schema migration utility. It lets you define schema migrations in plain old sql and easily manipulate the migration state of your database. Since database migrations are defined in files within your project, you get all the benefits of source control to manage changes to your database schema.
 
 #### supported databases
 
