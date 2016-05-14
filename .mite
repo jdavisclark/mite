@@ -1,5 +1,8 @@
 {
-	"ignorePaths": [
-		"**/*"
-	]
+  "host": "localhost",
+  "port": 3306,
+  "user": "whiteboard",
+  "password": "fnb1015",
+  "dialect": "mysql",
+  "database": "miteTest"
 }

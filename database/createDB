@@ -1,0 +1,10 @@
+# Remove any existing instance of miteTest database.
+drop database `miteTest`;
+# Create a new instance of miteTest database.
+CREATE DATABASE `miteTest`;
+# Grant access to the database.
+grant all privileges on `miteTest`.* to whiteboard@localhost identified by 'fnb1015';
+# ---------------------------------------------------------------------------------------------------------------------
+# Load copy of database for testing.
+use miteTest;
+source miteTest.sql

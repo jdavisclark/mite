@@ -55,21 +55,25 @@ mite uses a lot of `git` style subcommands. You can execute mite commands from a
 
 **create** - creates a new empty migration in the `migrations/` directory.
 
-**up** - runs any unexecuted migrations. The status must not be dirty prior to runing `mite up`
+**up** - runs any unexecuted migrations. The status must not be dirty prior to running `mite up`.
 
-**stepup** - run the first unexecuted migration
+**do file-name** - runs the specified migration. The status must not be dirty.
+
+**undo file-name** - reverses the specified migration. The status must not be dirty.
+
+**stepup** - run the first unexecuted migration.
 
 **down** - run the down migrations from the current *head* all the way down to the first migration. This is destructive and should never be run in a production environment.
 
 **stepdown** - run the down of the last executed migration. This is destructive and should never be run in a production environment.
 
-**submodules** - list all submodules
+**submodules** - list all submodules.
 
-**compare** - list the current disk hash + the tracked hash of all migrations
+**compare** - list the current disk hash + the tracked hash of all migrations.
 
-**help** - print usage information
+**help** - print usage information.
 
-**help [command]** - print usage information for a specific command
+**help [command]** - print usage information for a specific command.
 
 
 ## Configuration
